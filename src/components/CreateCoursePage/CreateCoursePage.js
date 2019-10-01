@@ -8,14 +8,10 @@ import './CreateCoursePage.css';
 class CreateCoursePage extends React.Component {
   static contextType = CourseContext
 
-  // onChange = e => {
-  //   this.setState({ [e.target.id]: e.target.value });
-  // };
-
   onSubmit = e => {
     e.preventDefault();
     const { title, description, notes, readings, duration, topic } = e.target
-    const content = {
+    const course = {
       title: title.value,
       description: description.value,
       notes: notes.value,
@@ -25,14 +21,15 @@ class CreateCoursePage extends React.Component {
       date_created: new Date(),
       author: 1
     }
-    CourseApiService.postCourse(content)
+    CourseApiService.postCourse(course)
       .then(this.context.addCourse)
       .then(() => {
-        content.value = ''
+        course.value = ''
       })
       .then(this.props.history.goBack())
       .catch(this.context.setError)
   };
+
 
   render() {
     return (

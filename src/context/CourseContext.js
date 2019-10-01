@@ -34,7 +34,6 @@ export class CourseProvider extends Component {
   }
 
   setCourseList = courseList => {
-    console.log("hi")
     this.setState({ courseList })
   }
 
@@ -70,18 +69,21 @@ export class CourseProvider extends Component {
     }))
   }
 
-  // addCourse = course => {
-  //   this.setCourses([
-  //     ...[this.state.courses],
-  //     course
-  //   ])
-  // }
-
   addCourse = course => {
+    this.setCourses([
+      ...[this.state.courses],
+      course
+    ])
     this.setState(prevState => ({
-      courses: [...prevState.courses, course]
-    }))
+      courseList: [...prevState.courseList, course]
+      }))
   }
+
+  // addCourse = course => {
+  //   this.setState(prevState => ({
+  //     courses: [...prevState.courses, course]
+  //   }))
+  // }
 
   render() {
     const value = {

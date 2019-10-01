@@ -14,9 +14,8 @@ export default class CourseListPage extends Component {
     CourseApiService.getCourses()
       .then(this.context.setCourseList)
       .catch(this.context.setError)
-      
   }
-
+  
   renderCourses() {
     const { courseList = [] } = this.context
     return courseList.map(course =>

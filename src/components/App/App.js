@@ -5,22 +5,19 @@ import Nav from '../Nav/Nav'
 // import PublicOnlyRoute from '../Utils/PublicOnlyRoute'
 import CourseListPage from '../CourseListPage/CourseListPage'
 import CoursePage from '../CoursePage/CoursePage'
-import LoginPage from '../../routes/LoginPage/LoginPage'
-import RegistrationPage from '../../routes/RegistrationPage/RegistrationPage'
+import LoginPage from '../LoginPage/LoginPage'
+import RegistrationPage from '../RegistrationPage/RegistrationPage'
 import CreateCoursePage from '../CreateCoursePage/CreateCoursePage';
-import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage'
+import NotFoundPage from '../NotFoundPage/NotFoundPage'
+import { CourseProvider } from '../../context/CourseContext'
 import './App.css'
 
 class App extends Component {
   state = { hasError: false }
 
-  static getDerivedStateFromError(error) {
-    console.error(error)
-    return { hasError: true }
-  }
-
   render() {
     return (
+      <CourseProvider>
       <div className='App'>
         <nav className='App__nav'>
           <Nav />
@@ -54,6 +51,7 @@ class App extends Component {
           </Switch>
         </main>
       </div>
+      </CourseProvider>
     )
   }
 }
