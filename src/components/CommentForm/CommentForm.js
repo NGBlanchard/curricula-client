@@ -1,21 +1,30 @@
 import React, { Component } from 'react'
-import ArticleContext from '../../contexts/ArticleContext'
-import ArticleApiService from '../../services/article-api-service'
+import CourseContext from '../../context/CourseContext'
+import CourseApiService from '../../services/course-api-service'
 import { Button, Textarea } from '../Utils/Utils'
 import './CommentForm.css'
 
 export default class CommentForm extends Component {
-  static contextType = ArticleContext
+  static contextType = CourseContext
 
-  handleSubmit = ev => {
-    ev.preventDefault()
-    const { article } = this.context
-    const { text } = ev.target
-    ArticleApiService.postComment(article.id, text.value)
+  onBlurb = e => {
+    e.preventDefault()
+    const { course } = this.context
+    const { content } = e.target
+    const comment = {
+      content: content.value,
+      date_created: new Date(),
+      course_id: course.id,
+      user_id: 1
+    }
+    CourseApiService.postComment(comment)
       .then(this.context.addComment)
       .then(() => {
-        text.value = ''
+        content.value = ''
       })
+      // .then(() => {
+      //   this.props.render()
+      // })
       .catch(this.context.setError)
   }
 
@@ -23,21 +32,21 @@ export default class CommentForm extends Component {
     return (
       <form
         className='CommentForm'
-        onSubmit={this.handleSubmit}
+        onSubmit={this.onBlurb}
       >
-        <div className='text'>
+        <div className='content'>
           <Textarea
             required
-            aria-label='Type a comment...'
-            name='text'
-            id='text'
+            aria-label="Here's to the Alcove..."
+            name='content'
+            id='content'
             cols='30'
             rows='3'
-            placeholder='Type a comment..'>
+            placeholder="Here's to the Alcove...">
           </Textarea>
         </div>
         <Button type='submit'>
-          Post comment
+          Blurb This Course
         </Button>
       </form>
     )

@@ -1,5 +1,5 @@
 
-.Hyph {
+.Bull {
   margin-right: 5px;
   margin-left: 5px;
 }
@@ -15,6 +15,9 @@
   width: 100%;
   border-radius: 4px;
 }
+textarea:focus, input:focus{
+  outline: none;
+}
 
 .Input::placeholder,
 .Textarea::placeholder {
@@ -27,11 +30,16 @@
 
 .Button {
   order: 1px solid #aaa;
-  background-color: #eee;
+  background-color: ivory;
   font-size: 1.1em;
   border-radius: 4px;
   padding: 8px 12px;
-  font-weight: bold;
+  font-weight: lighter;
+}
+
+.Button:hover {
+  cursor: pointer;
+  box-shadow: 0 4px 8px 0 rgba(202, 80, 255, 0.19);
 }
 
 .Required {

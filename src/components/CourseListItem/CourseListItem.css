@@ -1,53 +1,56 @@
-.ArticleListItem {
+.CourseListItem {
   background: none;
-  border: 0;
-  border-bottom: 1px solid #3f455038;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border: 1px solid #3f455038;
+  margin-bottom: 10px;
   font-size: smaller;
   display: block;
   padding: 10px 10px 0;
   text-align: left;
   width: 100%;
   text-decoration: none;
+  height: 150px;
 }
 
-.ArticleListItem:hover {
+.CourseListItem:hover {
   cursor: pointer;
   background-color: #f7f8f9;
+  box-shadow: 0 4px 8px 0 rgba(202, 80, 255, 0.19);
 }
 
-.ArticleListItem,
-.ArticleListItem:visited {
+.CourseListItem,
+.CourseListItem:visited {
   color: #555;
 }
 
-.ArticleListItem__header {
+.CourseListItem__header {
   align-items: baseline;
   display: flex;
   justify-content: space-between;
 }
-.ArticleListItem__heading {
+.CourseListItem__heading {
   margin: 0;
 }
 
-.ArticleListItem__author {
+.CourseListItem__author {
   font-weight: bold;
-  color: #555;
+  color: #CA1551;
 }
 
-.ArticleListItem__date {
+.CourseListItem__date {
   display: none;
 }
 
-.ArticleListItem__footer {
+.CourseListItem__footer {
   padding: 10px 0;
 }
 
-.ArticleListItem__comment-count {
+.CourseListItem__comment-count {
   float: right;
   font-size: 1.3em;
 }
 
-.ArticleListItem__comment-count .fa-layers-text {
+.CourseListItem__comment-count .fa-layers-text {
   left: 50%;
   top: 44%;
   font-family: Arial;
@@ -56,7 +59,7 @@
 }
 
 @media screen and (min-width: 440px) {
-  .ArticleListItem__date {
+  .CourseListItem__date {
     display: initial;
   }
 }

@@ -1,17 +1,16 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { Hyph } from '../Utils/Utils'
+import { Bull } from '../Utils/Utils'
 import TokenService from '../../services/token-service'
-import './Header.css'
+import './Nav.css'
 
-export default class Header extends Component {
+export default class Nav extends Component {
   handleLogoutClick = () => {
   }
 
   renderLogoutLink() {
     return (
-      <div className='Header__logged-in'>
+      <div className='Nav__logged-in'>
         <Link
           onClick={this.handleLogoutClick}
           to='/'>
@@ -23,12 +22,12 @@ export default class Header extends Component {
 
   renderLoginLink() {
     return (
-      <div className='Header__not-logged-in'>
+      <div className='Nav__not-logged-in'>
         <Link
           to='/register'>
           Register
         </Link>
-        <Hyph />
+        <Bull />
         <Link
           to='/login'>
           Log in
@@ -39,14 +38,21 @@ export default class Header extends Component {
 
   render() {
     return (
-      <nav className='Header'>
+      <nav className='Nav'>
         <h1>
           <Link to='/'>
-            <FontAwesomeIcon className='green' icon='frog' />
-            {' '}
-            Blogful Client
+            Curricula
           </Link>
         </h1>
+        <Bull />
+        <Link to='/create'>
+          Create
+        </Link>
+        <Bull />
+        <Link to='/profile'>
+          Profile
+        </Link>
+        <Bull />  
         {TokenService.hasAuthToken()
           ? this.renderLogoutLink()
           : this.renderLoginLink()}

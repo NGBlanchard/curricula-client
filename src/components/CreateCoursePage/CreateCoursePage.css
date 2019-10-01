@@ -1,0 +1,56 @@
+h1, h4 {
+  font-style: lighter;
+  text-align: center;
+  font-family: 'Cinzel', serif;
+}
+
+h3 {
+  font-family: 'Lato', sans-serif;
+}
+
+#new-course{
+  text-align: left;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+}
+
+#duration {
+  width: 70px;
+}
+
+label, .other-topic-container  {
+  margin-top: 30px;
+  color: #444;
+}
+
+textarea {
+  border: 1px solid #3f455038;
+  font-size: 15px;
+}
+
+#submit-new, #reset-new {
+  width: 30%
+}
+
+.button-container {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.course-duration-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#duration {
+  margin-top: 10px;
+  font-size: 16px;
+  height: 19px;
+}

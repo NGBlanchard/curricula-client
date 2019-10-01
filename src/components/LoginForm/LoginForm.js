@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+
+import config from '../../config'
+
 import { Button, Input } from '../Utils/Utils'
 
 export default class LoginForm extends Component {
@@ -8,24 +11,36 @@ export default class LoginForm extends Component {
 
   state = { error: null }
 
-  handleSubmitBasicAuth = ev => {
+  handleAuth = ev => {
     ev.preventDefault()
     const { user_name, password } = ev.target
-
-    console.log('login form submitted')
-    console.log({ user_name, password })
-
-    user_name.value = ''
-    password.value = ''
-    this.props.onLoginSuccess()
+    const user = {
+      user_name: user_name.value,
+      password: password.value
+    }
+    return fetch(`${config.API_ENDPOINT}/users/login`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(user)
+    })
+    ///must validate user and retrieve token
+      .then(res =>
+        (!res.ok)
+          ? res.json().then(e => Promise.reject(e))
+          : res.json()
+    )
+    .then(() => this.props.onLoginSuccess())
   }
+
 
   render() {
     const { error } = this.state
     return (
       <form
         className='LoginForm'
-        onSubmit={this.handleSubmitBasicAuth}
+        onSubmit={this.handleAuth}
       >
         <div role='alert'>
           {error && <p className='red'>{error}</p>}
