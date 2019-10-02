@@ -1,3 +1,4 @@
+import TokenService from '../services/token-service'
 import config from '../config'
 
 const CourseApiService = {
@@ -16,6 +17,7 @@ const CourseApiService = {
   getCourse(courseId) {
     return fetch(`${config.API_ENDPOINT}/courses/${courseId}`, {
       headers: {
+        'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
     })
       .then(res =>
@@ -28,6 +30,7 @@ const CourseApiService = {
   getCommentsForCourse(courseId) {
     return fetch(`${config.API_ENDPOINT}/comments`, {
       headers: {
+        'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
     })
       .then(res =>
@@ -58,6 +61,7 @@ const CourseApiService = {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
+        'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
       body: JSON.stringify(comment),
     })
@@ -81,20 +85,19 @@ const CourseApiService = {
           : res.json()
       )
   },
-  postLogin(credentials) {
+  postLogin({ user_name, password }) {
     return fetch(`${config.API_ENDPOINT}/login`, {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
-        'bearer token': `${config.TOKEN_KEY}`
+        
       },
-      body: JSON.stringify(credentials),
+      body: JSON.stringify({ user_name, password }),
     })
       .then(res =>
         (!res.ok)
-          ? res.json().then(e => Promise.reject("didn't fly"))
+          ? res.json().then(e => Promise.reject(e))
           : res.json()
-      .then(console.log(res))
       )
   },
 }

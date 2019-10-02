@@ -33,10 +33,10 @@ export default class CoursePage extends Component {
       <h3 id="topic">Topic: {course.topic}</h3>
       <p>
         {/* <CourseStyle course={course} /> */}
-        {course.author.id && <>
+        {/* {course.author.id && <> */}
           <Bull />
           {/* <CourseAuthor course={course.author} /> */}
-        </>}
+        {/* </>} */}
         Posted on
         <Bull />
         <NiceDate date={course.date_created} />

@@ -16,6 +16,7 @@ export default class LoginForm extends Component {
 
   handleAuth = e => {
     e.preventDefault()
+    this.setState({ error: null })
     const { user_name, password } = e.target
     CourseApiService.postLogin({
       user_name: user_name.value,
