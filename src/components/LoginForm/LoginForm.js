@@ -1,4 +1,7 @@
+import jwtDecode from 'jwt-decode';
 import React, { Component } from 'react'
+import CourseApiService from '../../services/course-api-service';
+import TokenService from '../../services/token-service';
 
 import config from '../../config'
 
@@ -11,27 +14,22 @@ export default class LoginForm extends Component {
 
   state = { error: null }
 
-  handleAuth = ev => {
-    ev.preventDefault()
-    const { user_name, password } = ev.target
-    const user = {
+  handleAuth = e => {
+    e.preventDefault()
+    const { user_name, password } = e.target
+    CourseApiService.postLogin({
       user_name: user_name.value,
       password: password.value
-    }
-    return fetch(`${config.API_ENDPOINT}/users/login`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(user)
     })
-    ///must validate user and retrieve token
-      .then(res =>
-        (!res.ok)
-          ? res.json().then(e => Promise.reject(e))
-          : res.json()
-    )
-    .then(() => this.props.onLoginSuccess())
+    .then(res => {
+      user_name.value = ''
+      password.value = ''
+      TokenService.saveAuthToken(res.authToken)
+      this.props.onLoginSuccess()
+    })
+    .catch(res => {
+      this.setState({ error: res.error })
+    })
   }
 
 

@@ -26,7 +26,6 @@ const CourseApiService = {
   },
 
   getCommentsForCourse(courseId) {
-    
     return fetch(`${config.API_ENDPOINT}/comments`, {
       headers: {
       },
@@ -81,7 +80,23 @@ const CourseApiService = {
           ? res.json().then(e => Promise.reject(e))
           : res.json()
       )
-  }
+  },
+  postLogin(credentials) {
+    return fetch(`${config.API_ENDPOINT}/login`, {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+        'bearer token': `${config.TOKEN_KEY}`
+      },
+      body: JSON.stringify(credentials),
+    })
+      .then(res =>
+        (!res.ok)
+          ? res.json().then(e => Promise.reject("didn't fly"))
+          : res.json()
+      .then(console.log(res))
+      )
+  },
 }
 
 export default CourseApiService
