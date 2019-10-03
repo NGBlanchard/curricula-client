@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import Nav from '../Nav/Nav'
-// import PrivateRoute from '../Utils/PrivateRoute'
-// import PublicOnlyRoute from '../Utils/PublicOnlyRoute'
+import PrivateRoute from '../Utils/PrivateRoute'
+import PublicOnlyRoute from '../Utils/PublicOnlyRoute'
 import CourseListPage from '../CourseListPage/CourseListPage'
 import CoursePage from '../CoursePage/CoursePage'
 import LoginPage from '../LoginPage/LoginPage'
 import RegistrationPage from '../RegistrationPage/RegistrationPage'
 import CreateCoursePage from '../CreateCoursePage/CreateCoursePage';
+import Profile from '../Profile/Profile';
 import NotFoundPage from '../NotFoundPage/NotFoundPage'
 import { CourseProvider } from '../../context/CourseContext'
 import './App.css'
@@ -25,26 +26,33 @@ class App extends Component {
         <main className='App__main'>
           {this.state.hasError && <p className='red'>There was an error. Reconsider everything.</p>}
           <Switch>
-            <Route
+            <PrivateRoute
               exact
               path={'/'}
               component={CourseListPage}
             />
-            <Route
+            <PublicOnlyRoute
+              restrictied={false}
+              exact
               path={'/login'}
               component={LoginPage}
             />
-            <Route
+            <PublicOnlyRoute
+              restrictied={true}
               path={'/register'}
               component={RegistrationPage}
             />
-            <Route
+            <PrivateRoute
               path={'/course/:courseId'}
               component={CoursePage}
             />
-            <Route 
+            <PrivateRoute 
               path={'/create'} 
               component={CreateCoursePage} />
+            <PrivateRoute
+              path={'/profile/:profileId'}
+              component={Profile}
+            />
             <Route
               component={NotFoundPage}
             />

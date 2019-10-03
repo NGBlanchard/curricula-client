@@ -26,7 +26,7 @@ class CreateCoursePage extends React.Component {
       .then(() => {
         course.value = ''
       })
-      .then(this.props.history.goBack())
+      .then(this.props.history.push('/'))
       .catch(this.context.setError)
   };
 

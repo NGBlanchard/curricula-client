@@ -51,4 +51,3 @@ function CourseAuthor({ course }) {
     </span>
   )
 }
-

@@ -6,8 +6,8 @@ import './Nav.css'
 
 export default class Nav extends Component {
   handleLogoutClick = () => {
-    localStorage.clear();
-    window.location.href = '/';
+    TokenService.clearAuthToken()
+    window.location.href = '/login';
   }
 
   renderLogoutLink() {

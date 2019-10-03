@@ -26,6 +26,10 @@ export default CourseContext
 
 export class CourseProvider extends Component {
   state = {
+    currentUser: {
+      id: '',
+      user_name: '',
+    },
     courseList: [],
     courses: [],
     comments: [],
@@ -78,12 +82,6 @@ export class CourseProvider extends Component {
       courseList: [...prevState.courseList, course]
       }))
   }
-
-  // addCourse = course => {
-  //   this.setState(prevState => ({
-  //     courses: [...prevState.courses, course]
-  //   }))
-  // }
 
   render() {
     const value = {

@@ -1,9 +1,7 @@
-import jwtDecode from 'jwt-decode';
 import React, { Component } from 'react'
 import CourseApiService from '../../services/course-api-service';
 import TokenService from '../../services/token-service';
 
-import config from '../../config'
 
 import { Button, Input } from '../Utils/Utils'
 

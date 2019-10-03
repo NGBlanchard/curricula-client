@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { Button, Input, Required, nonEmpty, matches, length, isTrimmed } from '../Utils/Utils'
-import config from '../../config'
+import CourseService from '../../services/course-api-service';
 
-const passwordLength = length({min: 8, max: 72})
+const passwordLength = length({min: 8, max: 60})
 const matchesPassword = matches('password')
 
 export default class RegistrationForm extends Component {
@@ -15,25 +15,39 @@ export default class RegistrationForm extends Component {
   onSubmit = e => {
     e.preventDefault()
     const { user_name, password } = e.target
-    const user = {
+    this.setState({ error: null })
+    CourseService.postUser({
       user_name: user_name.value,
       password: password.value,
-      date_created: new Date()
-    }
-    return fetch(`${config.API_ENDPOINT}/users`, {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json'
-      },
-      body: JSON.stringify(user)
     })
-      .then(res =>
-        (!res.ok)
-          ? res.json().then(e => Promise.reject(e))
-          : res.json()
-    )
-    .then(() => this.props.onRegistrationSuccess())
+    .then(user => {
+      user_name.value = ''
+      password.value = ''
+          this.props.onRegistrationSuccess()
+        })
+        .catch(res => {
+          this.setState({ error: res.error })
+        })
   }
+  //   const user = {
+  //     user_name: user_name.value,
+  //     password: password.value,
+  //     date_created: new Date()
+  //   }
+  //   return fetch(`${config.API_ENDPOINT}/users`, {
+  //     method: 'POST',
+  //     headers: {
+  //       'content-type': 'application/json'
+  //     },
+  //     body: JSON.stringify(user)
+  //   })
+  //     .then(res =>
+  //       (!res.ok)
+  //         ? res.json().then(e => Promise.reject(e))
+  //         : res.json()
+  //   )
+  //   .then(() => this.props.onRegistrationSuccess())
+  // }
 
   render() {
     const { error } = this.state

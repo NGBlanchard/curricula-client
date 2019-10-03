@@ -1,7 +1,26 @@
 import TokenService from '../services/token-service'
 import config from '../config'
 
+export const getUserForComment = (users=[], commentid) => (
+  (!commentid)
+    ? users
+    : users.filter(user => user.id === commentid)
+  )
+
 const CourseApiService = {
+  
+  getUsers() {
+    return fetch(`${config.API_ENDPOINT}/users`, {
+      headers: {
+      },
+    })
+      .then(res =>
+        (!res.ok)
+          ? res.json().then(e => Promise.reject(e))
+          : res.json()
+      )
+  },
+
   getCourses() {
     return fetch(`${config.API_ENDPOINT}/courses`, {
       headers: {
@@ -99,6 +118,20 @@ const CourseApiService = {
           ? res.json().then(e => Promise.reject(e))
           : res.json()
       )
+  },
+  postUser(user) {
+    return fetch(`${config.API_ENDPOINT}/users`, {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify(user),
+    })
+    .then(res =>
+      (!res.ok)
+      ? res.json().then(e => Promise.reject(e))
+      : res.json()
+    )
   },
 }
 

@@ -74,6 +74,5 @@ export const matches = field => (value, allValues) =>
     ? undefined
     : 'Does not match'
 
-    /////////// functions
 
     
