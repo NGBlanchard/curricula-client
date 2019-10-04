@@ -50,7 +50,7 @@ class App extends Component {
               path={'/create'} 
               component={CreateCoursePage} />
             <PrivateRoute
-              path={'/profile/:profileId'}
+              path={'/profile'}
               component={Profile}
             />
             <Route

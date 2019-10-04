@@ -10,20 +10,15 @@ export default class CoursePage extends Component {
   static contextType = CourseContext
 
 
-  componentDidMount() {
-    const { courseId } = this.props.match.params
-    this.context.clearError()
-    CourseApiService.getCourse(courseId)
-      .then(this.context.setCourse)
-      .catch(this.context.setError)
-    CourseApiService.getCommentsForCourse(courseId)
-      .then(this.context.setComments)
-      .catch(this.context.setError)
-  }
+  // componentDidMount() {
+    
+  //   this.context.clearError()
+  // }
 
   render() {
+    // const { user_name } = CourseContext.currentUser
     return (
-      <div>Profile</div>
+      <div>Wait</div>
     )
   }
 }

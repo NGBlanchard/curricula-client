@@ -1,3 +1,4 @@
+import CourseContext from '../context/CourseContext'
 import TokenService from '../services/token-service'
 import config from '../config'
 
@@ -118,6 +119,7 @@ const CourseApiService = {
           ? res.json().then(e => Promise.reject(e))
           : res.json()
       )
+      // .then (data => console.log(data.user_name))
   },
   postUser(user) {
     return fetch(`${config.API_ENDPOINT}/users`, {

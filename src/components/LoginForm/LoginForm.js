@@ -2,12 +2,12 @@ import React, { Component } from 'react'
 import CourseApiService from '../../services/course-api-service';
 import TokenService from '../../services/token-service';
 
-
 import { Button, Input } from '../Utils/Utils'
 
 export default class LoginForm extends Component {
   static defaultProps = {
-    onLoginSuccess: () => {}
+    onLoginSuccess: () => {
+    }
   }
 
   state = { error: null }
