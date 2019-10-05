@@ -1,16 +1,10 @@
-import CourseContext from '../context/CourseContext'
 import TokenService from '../services/token-service'
 import config from '../config'
 
-export const getUserForComment = (users=[], commentid) => (
-  (!commentid)
-    ? users
-    : users.filter(user => user.id === commentid)
-  )
 
 const CourseApiService = {
   
-  getUsers() {
+  getUsers(courseId) {
     return fetch(`${config.API_ENDPOINT}/users`, {
       headers: {
       },
@@ -19,6 +13,10 @@ const CourseApiService = {
         (!res.ok)
           ? res.json().then(e => Promise.reject(e))
           : res.json()
+      )
+      .then(users => (!courseId)
+      ? users
+      : users.filter(user => user.id == courseId)
       )
   },
 
@@ -119,7 +117,7 @@ const CourseApiService = {
           ? res.json().then(e => Promise.reject(e))
           : res.json()
       )
-      // .then (data => console.log(data.user_name))
+      // .then (res => console.log(res.user_name))
   },
   postUser(user) {
     return fetch(`${config.API_ENDPOINT}/users`, {

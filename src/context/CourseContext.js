@@ -12,6 +12,7 @@ const CourseContext = React.createContext({
   comments: [],
   currentUser: {
     user_name: '',
+    date_created: '',
   },
   error: null,
   setError: () => {},
@@ -32,6 +33,7 @@ export class CourseProvider extends Component {
   state = {
     currentUser: {
       user_name: '',
+      date_created: '',
     },
     courseList: [],
     courses: [],
@@ -86,10 +88,11 @@ export class CourseProvider extends Component {
       }))
   }
 
-  setCurrentUser = user => {
+  setCurrentUser = res => {
     this.setState({
       currentUser: {
-        user_name: user
+        user_name: res.user_name,
+        date_created: res.date_created,
       }
     })
   }
@@ -99,6 +102,7 @@ export class CourseProvider extends Component {
       course: this.state.course,
       comments: this.state.comments,
       courseList: this.state.courseList,
+      currentUser: this.state.currentUser,
       error: this.state.error,
       setError: this.setError,
       clearError: this.clearError,

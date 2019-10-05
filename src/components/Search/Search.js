@@ -8,20 +8,24 @@ class Search extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // key: value
+      searchTerm: '',
     }
   }
 
+  onChange = e => {
+    this.setState({ [e.target.id]: e.target.value });
+    };
+  
 
   render() {
     return (
-        <form className="search-form">
-            <label htmlFor="course-title"></label>
+        <form onSubmit={this.onSearch} className="search-form">
+            <label htmlFor="course-searchTerm"></label>
             <Input 
                 type="text" 
-                id="search-bar"
+                id="searchTerm"
                 onChange={this.onChange}
-                value={this.state.title} 
+                value={this.state.searchTerm} 
                 placeholder="Hannah Arendt & The Walking Dead" 
                 required 
             />

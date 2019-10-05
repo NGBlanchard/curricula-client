@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import CourseApiService from '../../services/course-api-service';
 import TokenService from '../../services/token-service';
+import CourseContext from '../../context/CourseContext'
 
 import { Button, Input } from '../Utils/Utils'
 
@@ -9,8 +10,9 @@ export default class LoginForm extends Component {
     onLoginSuccess: () => {
     }
   }
-
+  
   state = { error: null }
+  static contextType = CourseContext
 
   handleAuth = e => {
     e.preventDefault()
@@ -24,12 +26,14 @@ export default class LoginForm extends Component {
       user_name.value = ''
       password.value = ''
       TokenService.saveAuthToken(res.authToken)
+      // this.context.setCurrentUser(res)
       this.props.onLoginSuccess()
     })
     .catch(res => {
       this.setState({ error: res.error })
     })
   }
+
 
 
   render() {

@@ -24,7 +24,7 @@
   box-shadow: 0 4px 8px 0 rgba(202, 80, 255, 0.19);
 }
 
-#search-bar {
+#searchTerm {
   border: 1px solid #ddd;
   font-size: 1em;
   margin: 10px 0px 10px 0px;
