@@ -16,6 +16,10 @@ class Search extends React.Component {
     this.setState({ [e.target.id]: e.target.value });
     };
   
+  onSearch = e => {
+    e.preventDefault()
+    
+  }
 
   render() {
     return (

@@ -1,34 +1,37 @@
 import React, { Component } from 'react'
 import CourseContext from '../../context/CourseContext'
+import TokenService from '../../services/token-service';
 import { NiceDate } from '../Utils/Utils'
-import config from '../../config'
 
 
 export default class CoursePage extends Component {
+  state = {
+    currentUser: [],
+    userDate: []
+  }
   static defaultProps = {
     match: { params: {} },
   }
   static contextType = CourseContext
 
-
   componentDidMount() {
-    // this.setState({
-    //   user_name: this.context.currentUser.user_name,
-    //   date_created: this.context.currentUser.date_created,
-    // })
-    this.context.clearError()
-  }
+    const currentUser = TokenService.getUser()
+    const userDate = TokenService.getDate()
+    this.setState({
+      currentUser: currentUser,
+      userDate: userDate
+    })
+    }
 
   render() {
-    // const { user_name, date_created } = this.context.currentUser
     return (
       <div className="profile-container">
-      <h3>Hello,</h3>
+      <h3>Hello, {this.state.currentUser}</h3>
       <p>Member since:
         <br/>
       <NiceDate
-        // date={this.state.date_created}
-      /></p>
+        date={this.state.userDate} />
+        </p>
       <div className="my-courses">
         <p>A grid of the user's courses. The ones they've posted and the ones they've saved.</p>
       </div>

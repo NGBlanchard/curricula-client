@@ -5,7 +5,22 @@ const TokenService = {
     window.localStorage.setItem(config.TOKEN_KEY, token)
   },
   setUser(user) {
-    window.sessionStorage.setItem(config.USER, user)
+    window.sessionStorage.setItem(config.CURRENT_USER, user)
+  },
+  setDate(date) {
+    window.sessionStorage.setItem(config.MEMBER_SINCE, date)
+  },
+  setUserId(userId) {
+    window.sessionStorage.setItem(config.USER_ID, userId)
+  },
+  getUser() {
+    return window.sessionStorage.getItem(config.CURRENT_USER)
+  },
+  getDate() {
+    return window.sessionStorage.getItem(config.MEMBER_SINCE)
+  },
+  getUserId() {
+    return window.sessionStorage.getItem(config.USER_ID)
   },
   getAuthToken() {
     return window.localStorage.getItem(config.TOKEN_KEY)

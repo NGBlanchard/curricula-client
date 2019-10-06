@@ -1,8 +1,11 @@
 import React, { Component } from 'react'
 import CourseContext from '../../context/CourseContext'
+import TokenService from '../../services/token-service';
 import CourseApiService from '../../services/course-api-service'
 import { Button, Textarea } from '../Utils/Utils'
 import './CommentForm.css'
+
+const userId = TokenService.getUserId()
 
 export default class CommentForm extends Component {
   static contextType = CourseContext
@@ -15,16 +18,13 @@ export default class CommentForm extends Component {
       content: content.value,
       date_created: new Date(),
       course_id: course.id,
-      user_id: 1
+      user_id: userId
     }
     CourseApiService.postComment(comment)
       .then(this.context.addComment)
       .then(() => {
         content.value = ''
       })
-      // .then(() => {
-      //   this.props.render()
-      // })
       .catch(this.context.setError)
   }
 

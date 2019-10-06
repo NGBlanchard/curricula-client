@@ -5,8 +5,9 @@ import { Section } from '../Utils/Utils'
 import CourseListItem from '../CourseListItem/CourseListItem'
 import Search from '../Search/Search';
 
+
+
 export default class CourseListPage extends Component {
-  
   static contextType = CourseContext
 
   componentDidMount() {
@@ -14,11 +15,14 @@ export default class CourseListPage extends Component {
     CourseApiService.getCourses()
       .then(this.context.setCourseList)
       .catch(this.context.setError)
+    CourseApiService.getUsers()
+      .then(this.context.setUserList)
+      .catch(this.context.setError)
   }
   
   renderCourses() {
     const { courseList = [] } = this.context
-    return courseList.map(course =>
+    return courseList && courseList.length && courseList.map(course =>
       <CourseListItem
         key={course.id}
         course={course}
@@ -33,7 +37,7 @@ export default class CourseListPage extends Component {
       <Search />
       <Section list className='CourseListPage'>
         {error
-          ? <p className='red'>There was an error. try something else, y'know?</p>
+          ? <p className='red'>There was an error. Try something else, y'know?</p>
           : this.renderCourses()}
       </Section>
       </>

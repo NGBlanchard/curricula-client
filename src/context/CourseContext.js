@@ -8,6 +8,7 @@ export const nullCourse = {
 const CourseContext = React.createContext({
   course: nullCourse,
   courseList: [],
+  userList: [],
   courses: [],
   comments: [],
   currentUser: {
@@ -24,17 +25,15 @@ const CourseContext = React.createContext({
   addComment: () => {},
   setCourses: () => {},
   addCourse: () => {},
-  setCurrentUser: () => {}
+  setCurrentUser: () => {},
+  setUserList: () => {}
 })
 
 export default CourseContext
 
 export class CourseProvider extends Component {
   state = {
-    currentUser: {
-      user_name: '',
-      date_created: '',
-    },
+    userList: [],
     courseList: [],
     courses: [],
     comments: [],
@@ -44,6 +43,11 @@ export class CourseProvider extends Component {
 
   setCourseList = courseList => {
     this.setState({ courseList })
+  }
+
+  setUserList = userList => {
+    this.setState({ userList })
+    
   }
 
   setError = error => {
@@ -114,6 +118,7 @@ export class CourseProvider extends Component {
       setCourses: this.setCourses,
       addCourse: this.addCourse,
       setCurrentUser: this.setCurrentUser,
+      setUserList: this.setUserList,
     }
     return (
       <CourseContext.Provider value={value}>

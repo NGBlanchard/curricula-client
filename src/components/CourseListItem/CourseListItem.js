@@ -6,18 +6,19 @@ import CourseContext from '../../context/CourseContext'
 
 import './CourseListItem.css'
 
+
 export default class CourseListItem extends Component {
   state = {
-    user: '',
+    user: null,
   }
   static contextType = CourseContext
 
-  componentDidMount() {
-    this.context.clearError()
-    // CourseApiService.getUsers(this.props.course.id)
-    // .then(user => console.log(user[0].user_name))
-    // .catch(this.context.setError)  
-  }
+    componentDidMount = () => {
+      this.context.clearError()
+      CourseApiService.getUserById(this.props.course.author)
+      .then(res =>
+        console.log(res.user_name))
+    }
 
   render() {
     const { course } = this.props
@@ -33,7 +34,7 @@ export default class CourseListItem extends Component {
           <CourseStyle course={course} />
           {course.author && <>
             <Bull />
-            <CourseAuthor course={course} user={this.state.user}/>
+            <CourseAuthor course={course}/>
           </>}
         </footer>
       </Link>
@@ -60,9 +61,13 @@ function CourseDate({ course }) {
 }
 
 function CourseAuthor({ course }) {
+  // CourseApiService.getUserById(course.author)
+  // .then(res => console.log(res.user_name))
+  
   return (
     <span className='CourseListItem__author'>
       {course.author}
+      
     </span>
   )
 }

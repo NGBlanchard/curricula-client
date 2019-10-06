@@ -2,11 +2,13 @@ import TokenService from '../services/token-service'
 import config from '../config'
 
 
+
 const CourseApiService = {
-  
-  getUsers(courseId) {
+
+  getUsers() {
     return fetch(`${config.API_ENDPOINT}/users`, {
       headers: {
+        'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
     })
       .then(res =>
@@ -14,10 +16,23 @@ const CourseApiService = {
           ? res.json().then(e => Promise.reject(e))
           : res.json()
       )
-      .then(users => (!courseId)
-      ? users
-      : users.filter(user => user.id == courseId)
+      },
+  
+  getUserById(courseId) {
+    return fetch(`${config.API_ENDPOINT}/users/${courseId}`, {
+      headers: {
+        'authorization': `bearer ${TokenService.getAuthToken()}`,
+      },
+    })
+      .then(res =>
+        (!res.ok)
+          ? res.json().then(e => Promise.reject(e))
+          : res.json()
       )
+      // .then(users => (!courseId)
+      // ? users
+      // : users.filter(user => user.id === courseId)
+      // )
   },
 
   getCourses() {
@@ -58,7 +73,7 @@ const CourseApiService = {
       )
       .then(comments => (!courseId)
       ? comments
-      : comments.filter(comment => comment.course_id == courseId)
+      : comments.filter(comment => comment.course_id === courseId)
       )
   },
   

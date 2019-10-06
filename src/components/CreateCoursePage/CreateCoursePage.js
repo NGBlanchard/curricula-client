@@ -1,9 +1,12 @@
 import React from 'react';
 import CourseContext from '../../context/CourseContext';
 import CourseApiService from '../../services/course-api-service';
+import TokenService from '../../services/token-service';
 import { Button, Input, Section} from '../Utils/Utils'
 
 import './CreateCoursePage.css';
+
+const userId = TokenService.getUserId()
 
 class CreateCoursePage extends React.Component {
   static contextType = CourseContext
@@ -19,7 +22,7 @@ class CreateCoursePage extends React.Component {
       duration: duration.value,
       topic: topic.value,
       date_created: new Date(),
-      author: 1
+      author: userId
     }
     CourseApiService.postCourse(course)
       .then(this.context.addCourse)
