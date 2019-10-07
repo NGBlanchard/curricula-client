@@ -8,6 +8,7 @@ const CourseApiService = {
   getUsers() {
     return fetch(`${config.API_ENDPOINT}/users`, {
       headers: {
+        'content-type': 'application/json',
         'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
     })
@@ -21,6 +22,7 @@ const CourseApiService = {
   getUserById(courseId) {
     return fetch(`${config.API_ENDPOINT}/users/${courseId}`, {
       headers: {
+        'content-type': 'application/json',
         'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
     })
@@ -38,6 +40,7 @@ const CourseApiService = {
   getCourses() {
     return fetch(`${config.API_ENDPOINT}/courses`, {
       headers: {
+        'content-type': 'application/json',
       },
     })
       .then(res =>
@@ -50,6 +53,7 @@ const CourseApiService = {
   getCourse(courseId) {
     return fetch(`${config.API_ENDPOINT}/courses/${courseId}`, {
       headers: {
+        'content-type': 'application/json',
         'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
     })
@@ -63,6 +67,7 @@ const CourseApiService = {
   getCommentsForCourse(courseId) {
     return fetch(`${config.API_ENDPOINT}/comments`, {
       headers: {
+        'content-type': 'application/json',
         'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
     })
@@ -80,6 +85,7 @@ const CourseApiService = {
   getComments() {
     return fetch(`${config.API_ENDPOINT}/comments`, {
       headers: {
+        'content-type': 'application/json',
       },
     })
       .then(res =>
