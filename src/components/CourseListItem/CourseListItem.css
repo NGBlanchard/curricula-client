@@ -34,7 +34,7 @@
 
 .CourseListItem__author {
   font-weight: bold;
-  color: #CA1551;
+  color: rgba(203, 80, 255, 0.735);
 }
 
 .CourseListItem__date {

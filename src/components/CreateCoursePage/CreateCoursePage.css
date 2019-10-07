@@ -29,6 +29,7 @@ label, .other-topic-container  {
 textarea {
   border: 1px solid #3f455038;
   font-size: 15px;
+  box-shadow: 0 4px 7px 0 rgba(202, 80, 255, 0.19);
 }
 
 #submit-new, #reset-new {
@@ -53,4 +54,13 @@ textarea {
   margin-top: 10px;
   font-size: 16px;
   height: 19px;
+}
+
+input {
+  box-shadow: 0 4px 7px 0 rgba(202, 80, 255, 0.19);
+}
+
+.select {
+  background-color: #f7f8f9;
+  box-shadow: 0 4px 7px 0 rgba(202, 80, 255, 0.19);
 }

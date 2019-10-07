@@ -5,10 +5,23 @@ import CourseApiService from '../../services/course-api-service'
 import { Button, Textarea } from '../Utils/Utils'
 import './CommentForm.css'
 
-const userId = TokenService.getUserId()
+
 
 export default class CommentForm extends Component {
+  state = {
+    user: "",
+  }
   static contextType = CourseContext
+
+    componentDidMount = () => {
+      this.context.clearError()
+      const userId = TokenService.getUserId()
+      this.setState({
+      user: userId
+      })
+    }
+
+  
 
   onBlurb = e => {
     e.preventDefault()
@@ -18,7 +31,7 @@ export default class CommentForm extends Component {
       content: content.value,
       date_created: new Date(),
       course_id: course.id,
-      user_id: userId
+      user_id: this.state.user
     }
     CourseApiService.postComment(comment)
       .then(this.context.addComment)

@@ -15,9 +15,6 @@ export default class CourseListPage extends Component {
     CourseApiService.getCourses()
       .then(this.context.setCourseList)
       .catch(this.context.setError)
-    CourseApiService.getUsers()
-      .then(this.context.setUserList)
-      .catch(this.context.setError)
   }
   
   renderCourses() {

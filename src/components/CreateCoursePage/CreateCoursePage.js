@@ -6,23 +6,33 @@ import { Button, Input, Section} from '../Utils/Utils'
 
 import './CreateCoursePage.css';
 
-const userId = TokenService.getUserId()
 
 class CreateCoursePage extends React.Component {
+  state = {
+    topic: 'Writing',
+    user: ""
+  }
   static contextType = CourseContext
+
+  componentDidMount() {
+    const userId = TokenService.getUserId()
+      this.setState({
+      user: userId
+      })
+  }
 
   onSubmit = e => {
     e.preventDefault();
-    const { title, description, notes, readings, duration, topic } = e.target
+    const { title, description, notes, readings, duration } = e.target
     const course = {
       title: title.value,
       description: description.value,
       notes: notes.value,
       readings: readings.value,
       duration: duration.value,
-      topic: topic.value,
+      topic: this.state.topic,
       date_created: new Date(),
-      author: userId
+      author: this.state.user
     }
     CourseApiService.postCourse(course)
       .then(this.context.addCourse)
@@ -33,6 +43,11 @@ class CreateCoursePage extends React.Component {
       .catch(this.context.setError)
   };
 
+  handleChange = (event) => {
+    this.setState({
+      topic: event.target.value
+    });
+  }
 
   render() {
     return (
@@ -51,13 +66,16 @@ class CreateCoursePage extends React.Component {
           />
         </Section>
         <Section className="form-section">
-          {/* <p>Select Course Topic</p> */}
-          <div className="other-topic-container">
-            <label htmlFor="other-topic">Course Topic</label>
-            <Input 
-              type="text" 
-              id="topic"
-              placeholder="Writing, Philosophy, Film, Pop Culture" />
+          <p>Select Course Topic</p>
+          <div className="topic-container">
+            <select className="select" onChange={this.handleChange}>
+              <option value="Writing">Writing</option>
+              <option value="Film">Film</option>
+              <option value="Philosophy">Philosophy</option>
+              <option value="Pop Culture">Pop Culture</option>
+              <option value="Teaching">Teaching</option>
+              <option value="Politics">Politics</option>
+            </select>
           </div>
         </Section>
         <Section className="form-section">

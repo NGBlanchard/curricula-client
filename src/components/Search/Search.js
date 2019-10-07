@@ -30,7 +30,7 @@ class Search extends React.Component {
                 id="searchTerm"
                 onChange={this.onChange}
                 value={this.state.searchTerm} 
-                placeholder="Hannah Arendt & The Walking Dead" 
+                // placeholder="Hannah Arendt & The Walking Dead" 
                 required 
             />
             <Button id="search-button" type="submit">Search Courses</Button>

@@ -73,7 +73,7 @@ const CourseApiService = {
       )
       .then(comments => (!courseId)
       ? comments
-      : comments.filter(comment => comment.course_id === courseId)
+      : comments.filter(comment => comment.course_id == courseId)
       )
   },
   
