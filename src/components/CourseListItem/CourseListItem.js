@@ -14,6 +14,7 @@ export default class CourseListItem extends Component {
   static contextType = CourseContext
 
     componentDidMount = () => {
+      // console.log(this.props.course.author)
       this.context.clearError()
       CourseApiService.getUserById(this.props.course.author)
       .then(res =>

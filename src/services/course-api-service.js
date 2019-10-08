@@ -8,7 +8,6 @@ const CourseApiService = {
   getUsers() {
     return fetch(`${config.API_ENDPOINT}/users`, {
       headers: {
-        'content-type': 'application/json',
         'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
     })
@@ -22,7 +21,6 @@ const CourseApiService = {
   getUserById(courseId) {
     return fetch(`${config.API_ENDPOINT}/users/${courseId}`, {
       headers: {
-        'content-type': 'application/json',
         'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
     })
