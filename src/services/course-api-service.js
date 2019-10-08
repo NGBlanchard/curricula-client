@@ -31,10 +31,6 @@ const CourseApiService = {
           ? res.json().then(e => Promise.reject(e))
           : res.json()
       )
-      // .then(users => (!courseId)
-      // ? users
-      // : users.filter(user => user.id === courseId)
-      // )
   },
 
   getCourses() {
