@@ -18,21 +18,7 @@ export default class CourseListPage extends Component {
     CourseApiService.getCourses()
       .then(this.context.setCourseList)
       .catch(this.context.setError)
-  
-    // CourseApiService.getUsers()
-    // .then(res =>
-    //       this.setState({
-    //         users: res
-    //       }))
-    // const { courseList = [] } = this.context
-    // this.getUsersForCourse(this.state.users, courseList)
   }
-
-  // getUsersForCourse = (users, courseList) => (
-  //   (!courseList)
-  //     ? users
-  //     : users.filter(user => user.id == course.author)
-  //   )
   
   renderCourses() {
     const { courseList = [] } = this.context
