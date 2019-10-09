@@ -8,6 +8,7 @@ export const nullCourse = {
 const CourseContext = React.createContext({
   course: nullCourse,
   courseList: [],
+  topics: [],
   userList: [],
   courses: [],
   comments: [],
@@ -26,7 +27,9 @@ const CourseContext = React.createContext({
   setCourses: () => {},
   addCourse: () => {},
   setCurrentUser: () => {},
-  setUserList: () => {}
+  setUserList: () => {},
+  filterTopics: () => {},
+  filterList: () => {},
 })
 
 export default CourseContext
@@ -35,10 +38,24 @@ export class CourseProvider extends Component {
   state = {
     userList: [],
     courseList: [],
+    topics: [],
     courses: [],
     comments: [],
     course: nullCourse,
     error: null,
+  }
+
+  filterList(term) {
+    // const filteredList = this.state.courseList.filter(course => course.topic === term)
+    console.log(term)
+  }
+
+  filterTopics = courseList => {
+    const filteredtopics = this.state.courseList.map(t => t.topic)
+    this.setState({
+      topics: filteredtopics
+    })
+ 
   }
 
   setCourseList = courseList => {
@@ -106,6 +123,7 @@ export class CourseProvider extends Component {
       course: this.state.course,
       comments: this.state.comments,
       courseList: this.state.courseList,
+      topics: this.state.topics,
       currentUser: this.state.currentUser,
       error: this.state.error,
       setError: this.setError,
@@ -119,6 +137,8 @@ export class CourseProvider extends Component {
       addCourse: this.addCourse,
       setCurrentUser: this.setCurrentUser,
       setUserList: this.setUserList,
+      filterTopics: this.filterTopics,
+      filterList: this.filterList,
     }
     return (
       <CourseContext.Provider value={value}>

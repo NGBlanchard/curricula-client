@@ -17,6 +17,7 @@ export default class CourseListPage extends Component {
     this.context.clearError()
     CourseApiService.getCourses()
       .then(this.context.setCourseList)
+      .then(this.context.filterTopics())
       .catch(this.context.setError)
   }
   
@@ -30,11 +31,13 @@ export default class CourseListPage extends Component {
     )
   }
 
+
   render() {
+    const { courseList = [] } = this.context
     const { error } = this.context
     return (
       <>
-      <Search />
+      <Search courseList={courseList} filterList={() => this.filterList()}/>
       <Section list className='CourseListPage'>
         {error
           ? <p className='red'>There was an error. Try something else, y'know?</p>

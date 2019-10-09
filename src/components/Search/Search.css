@@ -33,3 +33,22 @@
   width: 300px;
   border-radius: 4px;
 }
+
+.topic-sort {
+  background-color: #f7f8f9;
+  color: #444;
+  margin-left: 10px;
+  height: 20px;;
+}
+
+.topic-sort:hover {
+  box-shadow: 0 4px 7px 0 rgba(202, 80, 255, 0.19);
+}
+
+.topic-sort-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}

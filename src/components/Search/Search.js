@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Input } from '../../components/Utils/Utils'
+import CourseContext from '../../context/CourseContext'
 
 import './Search.css';
 
@@ -8,35 +8,37 @@ class Search extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchTerm: '',
+      topic: '',
     }
   }
+  static contextType = CourseContext
 
-  onChange = e => {
-    this.setState({ [e.target.id]: e.target.value });
-    };
-  
-  onSearch = e => {
-    e.preventDefault()
-    
+  handleChange = (event) => {
+    this.setState({
+      topic: event.target.value
+    });
+    this.context.filterList(event.target.value)
   }
 
   render() {
+    const filteredtopics = this.props.courseList.map(t => t.topic)
+    .filter((value, index, topic) => topic.indexOf(value) === index)
     return (
-        <form onSubmit={this.onSearch} className="search-form">
-            <label htmlFor="course-searchTerm"></label>
-            <Input 
-                type="text" 
-                id="searchTerm"
-                onChange={this.onChange}
-                value={this.state.searchTerm} 
-                // placeholder="Hannah Arendt & The Walking Dead" 
-                required 
-            />
-            <Button id="search-button" type="submit">Search Courses</Button>
-        </form>
-    );
+          <div className="topic-sort-container">
+            <p>Sort by Course Topic: </p>
+            <select className="topic-sort" onChange={this.handleChange}>
+              {filteredtopics.map( ( topic, index ) => 
+                <option 
+                  className="selected-topic" 
+                  value={topic}
+                  key={index}
+                  >
+                  {topic}
+                </option>
+              )}
+            </select>
+          </div>
+    )
   }
 }
-
 export default Search;
