@@ -47,7 +47,7 @@ export class CourseProvider extends Component {
 
   filterList(term) {
     // const filteredList = this.state.courseList.filter(course => course.topic === term)
-    console.log(term)
+    console.log(this.state.courseList)
   }
 
   filterTopics = courseList => {
