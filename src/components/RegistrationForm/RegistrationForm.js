@@ -29,25 +29,6 @@ export default class RegistrationForm extends Component {
           this.setState({ error: res.error })
         })
   }
-  //   const user = {
-  //     user_name: user_name.value,
-  //     password: password.value,
-  //     date_created: new Date()
-  //   }
-  //   return fetch(`${config.API_ENDPOINT}/users`, {
-  //     method: 'POST',
-  //     headers: {
-  //       'content-type': 'application/json'
-  //     },
-  //     body: JSON.stringify(user)
-  //   })
-  //     .then(res =>
-  //       (!res.ok)
-  //         ? res.json().then(e => Promise.reject(e))
-  //         : res.json()
-  //   )
-  //   .then(() => this.props.onRegistrationSuccess())
-  // }
 
   render() {
     const { error } = this.state
