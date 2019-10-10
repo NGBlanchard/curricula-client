@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import CourseContext from '../../context/CourseContext'
 import TokenService from '../../services/token-service';
 import { NiceDate } from '../Utils/Utils'
+import Nav from '../Nav/Nav'
 
 
 export default class CoursePage extends Component {
@@ -25,6 +26,8 @@ export default class CoursePage extends Component {
 
   render() {
     return (
+      <>
+      <Nav />
       <div className="profile-container">
       <h3>Hello, {this.state.currentUser}</h3>
       <p>Member since:
@@ -33,9 +36,10 @@ export default class CoursePage extends Component {
         date={this.state.userDate} />
         </p>
       <div className="my-courses">
-        <p>A grid of the user's courses. The ones they've posted and the ones they've saved.</p>
+        <p></p>
       </div>
       </div>
+      </>
     )
   }
 }

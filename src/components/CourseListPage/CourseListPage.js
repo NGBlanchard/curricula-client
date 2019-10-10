@@ -4,6 +4,7 @@ import CourseApiService from '../../services/course-api-service'
 import { Section } from '../Utils/Utils'
 import CourseListItem from '../CourseListItem/CourseListItem'
 import Search from '../Search/Search';
+import Nav from '../Nav/Nav'
 
 
 
@@ -20,9 +21,18 @@ export default class CourseListPage extends Component {
       .then(this.context.filterTopics())
       .catch(this.context.setError)
   }
-  
+
+
   renderCourses() {
     const { courseList = [] } = this.context
+    const { filteredList = [] } = this.context
+    if (filteredList.length > 0 ) {
+    return filteredList.map(course =>
+      <CourseListItem
+        key={course.id}
+        course={course}
+      />
+    )}
     return courseList.map(course =>
       <CourseListItem
         key={course.id}
@@ -37,6 +47,7 @@ export default class CourseListPage extends Component {
     const { error } = this.context
     return (
       <>
+      <Nav />
       <Search courseList={courseList} filterList={() => this.filterList()}/>
       <Section list className='CourseListPage'>
         {error

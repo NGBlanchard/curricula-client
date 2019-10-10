@@ -21,7 +21,7 @@ class App extends Component {
       <CourseProvider>
       <div className='App'>
         <nav className='App__nav'>
-          <Nav />
+          
         </nav>
         <main className='App__main'>
           {this.state.hasError && <p className='red'>There was an error. Reconsider everything.</p>}

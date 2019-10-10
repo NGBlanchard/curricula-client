@@ -55,7 +55,7 @@ export default class CommentForm extends Component {
             id='content'
             cols='30'
             rows='3'
-            placeholder="Here's to the Alcove...">
+            placeholder="Your blurb here...">
           </Textarea>
         </div>
         <Button type='submit'>

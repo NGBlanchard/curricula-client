@@ -35,7 +35,15 @@ class Search extends React.Component {
                   >
                   {topic}
                 </option>
-              )}
+                )}
+                <option 
+                className="deselect-topic" 
+                value=""
+                key="none"
+                >
+                None
+              </option>
+              
             </select>
           </div>
     )

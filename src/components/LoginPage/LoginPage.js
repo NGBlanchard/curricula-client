@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import LoginForm from '../../components/LoginForm/LoginForm'
 import { Section } from '../../components/Utils/Utils'
+import LoginNav from '../Nav/LoginNav'
 
 export default class LoginPage extends Component {
   static defaultProps = {
@@ -18,12 +19,15 @@ export default class LoginPage extends Component {
 
   render() {
     return (
+      <>
+      <LoginNav />
       <Section className='LoginPage'>
         <h2>Login</h2>
         <LoginForm
           onLoginSuccess={this.onLoginSuccess}
         />
       </Section>
+      </>
     )
   }
 }

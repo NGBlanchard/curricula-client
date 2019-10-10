@@ -3,6 +3,7 @@ import CourseContext from '../../context/CourseContext';
 import CourseApiService from '../../services/course-api-service';
 import TokenService from '../../services/token-service';
 import { Button, Input, Section} from '../Utils/Utils'
+import Nav from '../Nav/Nav'
 
 import './CreateCoursePage.css';
 
@@ -51,6 +52,8 @@ class CreateCoursePage extends React.Component {
 
   render() {
     return (
+      <>
+      <Nav />
       <div className="create-form">
       <header>
         <h1>Create New Course</h1>
@@ -119,6 +122,7 @@ class CreateCoursePage extends React.Component {
         </Section>
         </form>
     </div>
+    </>
     );
   }
 }
