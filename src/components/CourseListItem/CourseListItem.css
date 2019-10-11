@@ -50,14 +50,6 @@
   font-size: 1.3em;
 }
 
-.CourseListItem__comment-count .fa-layers-text {
-  left: 50%;
-  top: 44%;
-  font-family: Arial;
-  font-weight: bold;
-  font-size: smaller;
-}
-
 @media screen and (min-width: 440px) {
   .CourseListItem__date {
     display: initial;

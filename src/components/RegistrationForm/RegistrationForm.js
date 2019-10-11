@@ -7,7 +7,8 @@ const matchesPassword = matches('password')
 
 export default class RegistrationForm extends Component {
   static defaultProps = {
-    onRegistrationSuccess: () => {}
+    onRegistrationSuccess: () => {
+    }
   }
   state = { error: null }
 
@@ -23,7 +24,9 @@ export default class RegistrationForm extends Component {
     .then(user => {
       user_name.value = ''
       password.value = ''
-          this.props.onRegistrationSuccess()
+          this.props.onRegistrationSuccess(
+            alert("Registration successful. Now log in to access Curricula")
+          )
         })
         .catch(res => {
           this.setState({ error: res.error })

@@ -42,6 +42,7 @@ export default class Nav extends Component {
   render() {
     return (
       <nav className='Nav'>
+        <img src='../../favicon.ico' alt="logo" className="logo"></img>
         <h1>
           <Link to='/'>
             Curricula

@@ -22,6 +22,9 @@ export default class LoginPage extends Component {
       <>
       <LoginNav />
       <Section className='LoginPage'>
+      <div className="success-alert">
+          {<p className='success'>Your registration was a success :)</p>}
+        </div>
         <h2>Login</h2>
         <LoginForm
           onLoginSuccess={this.onLoginSuccess}

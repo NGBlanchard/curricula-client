@@ -22,14 +22,9 @@
   text-decoration: none;
 }
 
-/* .Nav__not-logged-in {
-  display: flex;
-  flex-direction: column;
-} */
-
-/* .Nav__not-logged-in .Hyph {
+.logo {
   display: none;
-} */
+}
 
 @media screen and (min-width: 450px) {
   .Nav {
@@ -45,5 +40,15 @@
 
   .Nav__not-logged-in .Hyph {
     display: initial;
+  }
+}
+
+
+@media screen and (min-width: 768px) {
+  .logo {
+    display: inline;
+  }
+  .Nav h1 {
+    font-size: 40px;
   }
 }

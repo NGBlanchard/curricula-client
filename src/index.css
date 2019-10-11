@@ -19,22 +19,16 @@ p {
   color: #555;
 }
 
-.blue {
-  color: #477ACC;
-}
-
-.yellow {
-  color: #EAC435;
-}
-
-.green {
-  color: #09a55e;
+.success {
+  color: rgba(203, 80, 255, 0.735);
+  font-weight: bold;
 }
 
 .red {
   color: #CA1551;
 }
 
-.orange {
-  color: #FB4D3D;
+.success-alert {
+  display:none;
 }
+
