@@ -6,7 +6,7 @@ import CourseListItem from '../CourseListItem/CourseListItem'
 import Search from '../Search/Search';
 import Nav from '../Nav/Nav'
 
-
+import './CourseListPage'
 
 export default class CourseListPage extends Component {
   state = {
