@@ -4,6 +4,7 @@ import CourseApiService from '../../services/course-api-service'
 import { NiceDate, Bull, Section } from '../Utils/Utils'
 import CommentForm from '../CommentForm/CommentForm'
 import CommentCard from '../CommentCard/CommentCard'
+import Nav from '../Nav/Nav'
 
 import './CoursePage.css'
 
@@ -32,6 +33,7 @@ export default class CoursePage extends Component {
     const { course, comments } = this.context
    
     return <>
+      <Nav />
       <h1>{course.title}</h1>
       <h3 id="topic">Topic: {course.topic}</h3>
       <p>
