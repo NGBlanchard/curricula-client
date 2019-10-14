@@ -19,7 +19,7 @@ const CourseContext = React.createContext({
   },
   error: null,
   setError: () => {},
-  clearError: () => { },
+  clearError: () => {},
   setCourse: () => {},
   setCourseList: () => {},
   clearCourse: () => {},
