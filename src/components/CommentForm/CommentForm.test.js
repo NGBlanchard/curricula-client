@@ -1,4 +1,4 @@
-import CommentCard from './CommentCard'
+import CommentForm from './CommentForm'
 import React from 'react'
 import { configure, mount } from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
@@ -6,7 +6,7 @@ import Adapter from 'enzyme-adapter-react-16'
 configure({ adapter: new Adapter() });
 
 
-describe('<CommentCard />', () => {
+describe('<CommentForm />', () => {
   it('Renders without crashing', () => {
     const comment = {
       id: 1,
@@ -19,7 +19,7 @@ describe('<CommentCard />', () => {
       } 
     }
 
-    mount(<CommentCard
+    mount(<CommentForm
       key={comment.id}
       comment={comment}
       user={comment.user_id}

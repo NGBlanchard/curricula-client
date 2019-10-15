@@ -1,4 +1,5 @@
-import CourseListPage from './CourseListPage'
+import CourseListItem from './CourseListItem'
+
 import React from 'react'
 import { configure, mount } from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
@@ -6,7 +7,7 @@ import Adapter from 'enzyme-adapter-react-16'
 configure({ adapter: new Adapter() });
 
 
-describe('<CourseListPage />', () => {
+describe('<CourseListItem />', () => {
   it('Renders without crashing', () => {
     const course = {
         id: 4,
@@ -21,22 +22,11 @@ describe('<CourseListPage />', () => {
 
     const context = {
       clearError(){
-        return;
-      }, 
-      setCourseList(){
-        return;
-      },
-      filterTopics() {
-        const filteredtopics = this.state.courseList.map(t => t.topic)
-        this.setState({
-          topics: filteredtopics
-        })
-      },
-      courseList: [],
-      filteredList: [],
+        this.setState({ error: null })
+      } 
     }
 
-    mount(<CourseListPage
+    mount(<CourseListItem
       key={course.id}
       course={course}
     />, context)

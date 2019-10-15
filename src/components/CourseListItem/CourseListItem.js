@@ -25,6 +25,7 @@ export default class CourseListItem extends Component {
   render() {
     const { course } = this.props
     return (
+      
       <Link to={`/course/${course.id}`} className='CourseListItem'>
         <header className='CourseListItem__header'>
           <h2 className='CourseListItem__heading'>
@@ -41,6 +42,7 @@ export default class CourseListItem extends Component {
           </span>
         </footer>
       </Link>
+      
     )
   }
 }
