@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import LoginForm from '../../components/LoginForm/LoginForm'
 import { Section } from '../../components/Utils/Utils'
 import LoginNav from '../Nav/LoginNav'
+import Welcome from './Welcome'
 
 export default class LoginPage extends Component {
   static defaultProps = {
@@ -21,6 +22,7 @@ export default class LoginPage extends Component {
     return (
       <>
       <LoginNav />
+      <Welcome />
       <Section className='LoginPage'>
       <div className="success-alert">
           {<p className='success'>Your registration was a success :)</p>}

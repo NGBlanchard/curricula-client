@@ -20,4 +20,22 @@
   padding-bottom: 40px;
 }
 
+.welcome-container {
+  display: flex;
+  flex-direction: column;
+}
 
+.welcome-header {
+  margin-top: 50px;
+}
+
+.landing {
+  text-align: center;
+}
+
+.directions {
+  text-align: center;
+  text-decoration: none;
+  color: rgba(203, 80, 255, 0.735);
+  font-weight: bold;
+}

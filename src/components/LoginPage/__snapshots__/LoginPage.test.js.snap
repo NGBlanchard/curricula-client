@@ -84,6 +84,27 @@ exports[`<LoginPage /> renders Login Page by default 1`] = `
           </div>
         </nav>
       </LoginNav>
+      <Welcome>
+        <div
+          className="welcome-container"
+        >
+          <h1
+            className="welcome-header"
+          >
+            A Community for Teachers
+          </h1>
+          <p
+            className="landing"
+          >
+            Curricula is a tool for teachers and instructors who wish to exchange ideas for courses, lessons, and curriculum outlines.
+          </p>
+          <p
+            className="directions"
+          >
+            Click register above or login below.
+          </p>
+        </div>
+      </Welcome>
       <Section
         className="LoginPage"
       >

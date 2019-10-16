@@ -19,14 +19,14 @@ You can:
   - Add your own classes to the app's course list
 
 # Screenshots
-Homepage:
-![Homepage](/screenshots/courselist.png)
-First Search:
-![First Search](/screenshots/course.png)
-Second Search:
-![Second Search](/screenshots/comment.png)
-Results Screen:
-![Results](/screenshots/createcourse.png)
+Browse the Course List:
+![Course List](/screenshots/courselist.png)
+View Course:
+![Course](/screenshots/course.png)
+Add Comments:
+![Add Comments](/screenshots/comment.png)
+Create Course:
+![Create Course](/screenshots/createcourse.png)
 
 ### Technology Used
 
