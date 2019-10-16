@@ -6,6 +6,8 @@ I wanted an app that allows my fellow teachers and instructors to share ideas ab
 # Demo
 
   - [Live Demo](https://curricula.ngblanchard.now.sh/login)
+  Demo username: Demo_Person
+  Demo password: D3moPa55word!
 
 
 # Summary
