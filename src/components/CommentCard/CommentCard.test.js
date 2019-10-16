@@ -5,6 +5,7 @@ import Adapter from 'enzyme-adapter-react-16'
 
 configure({ adapter: new Adapter() });
 
+//this is a change
 
 describe('<CommentCard />', () => {
   it('Renders without crashing', () => {

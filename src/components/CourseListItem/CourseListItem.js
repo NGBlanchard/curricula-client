@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { NiceDate } from '../Utils/Utils'
 import CourseApiService from '../../services/course-api-service'
 import CourseContext from '../../context/CourseContext'
@@ -26,7 +26,7 @@ export default class CourseListItem extends Component {
     const { course } = this.props
     return (
       
-      <Link to={`/course/${course.id}`} className='CourseListItem'>
+      <NavLink to={`/course/${course.id}`} className='CourseListItem'>
         <header className='CourseListItem__header'>
           <h2 className='CourseListItem__heading'>
             {course.title}
@@ -41,7 +41,7 @@ export default class CourseListItem extends Component {
             </p>
           </span>
         </footer>
-      </Link>
+      </NavLink>
       
     )
   }

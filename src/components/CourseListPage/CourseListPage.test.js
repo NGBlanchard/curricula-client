@@ -1,4 +1,5 @@
 import CourseListPage from './CourseListPage'
+import { BrowserRouter as Router } from "react-router-dom"
 import React from 'react'
 import { configure, mount } from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
@@ -36,9 +37,12 @@ describe('<CourseListPage />', () => {
       filteredList: [],
     }
 
-    mount(<CourseListPage
-      key={course.id}
-      course={course}
-    />, context)
+    mount(
+      <Router>
+        <CourseListPage
+          key={course.id}
+          course={course}
+        />
+      </Router>, context)
   })
 })

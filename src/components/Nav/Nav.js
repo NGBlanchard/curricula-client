@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 import { Bull } from '../Utils/Utils'
 import TokenService from '../../services/token-service'
 import './Nav.css'
@@ -14,11 +14,11 @@ export default class Nav extends Component {
   renderLogoutLink() {
     return (
       <div className='Nav__logged-in'>
-        <Link
+        <NavLink
           onClick={this.handleLogoutClick}
           to='/'>
           Logout
-        </Link>
+        </NavLink>
       </div>
     )
   }
@@ -26,10 +26,10 @@ export default class Nav extends Component {
   renderLoginLink() {
     return (
       <div className='Nav__not-logged-in'>
-        <Link
+        <NavLink
           to='/register'>
           Register
-        </Link>
+        </NavLink>
         <Bull />
         <Link
           to='/login'>
@@ -44,18 +44,18 @@ export default class Nav extends Component {
       <nav className='Nav'>
         <img src='../../favicon.ico' alt="logo" className="logo"></img>
         <h1>
-          <Link to='/'>
+          <NavLink to='/'>
             Curricula
-          </Link>
+          </NavLink>
         </h1>
         <Bull />
         <Link to='/create'>
           Create
         </Link>
         <Bull />
-        <Link to='/profile'>
+        <NavLink to='/profile'>
           Profile
-        </Link>
+        </NavLink>
         <Bull />  
         {TokenService.hasAuthToken()
           ? this.renderLogoutLink()
