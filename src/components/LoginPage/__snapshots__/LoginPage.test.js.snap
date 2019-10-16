@@ -1,0 +1,172 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<LoginPage /> renders Login Page by default 1`] = `
+<BrowserRouter>
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "createHref": [Function],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "pathname": "/",
+          "search": "",
+          "state": undefined,
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
+  >
+    <LoginPage
+      history={
+        Object {
+          "push": [Function],
+        }
+      }
+      location={Object {}}
+    >
+      <LoginNav>
+        <nav
+          className="Nav"
+        >
+          <h1>
+            <Link
+              replace={false}
+              to="/"
+            >
+              <a
+                href="/"
+                onClick={[Function]}
+              >
+                Curricula
+              </a>
+            </Link>
+          </h1>
+          <div
+            className="Nav__not-logged-in"
+          >
+            <Link
+              replace={false}
+              to="/register"
+            >
+              <a
+                href="/register"
+                onClick={[Function]}
+              >
+                Register
+              </a>
+            </Link>
+            <Bull>
+              <span
+                className="Bull"
+              >
+                 • 
+              </span>
+            </Bull>
+            <Link
+              replace={false}
+              to="/login"
+            >
+              <a
+                href="/login"
+                onClick={[Function]}
+              >
+                Log in
+              </a>
+            </Link>
+          </div>
+        </nav>
+      </LoginNav>
+      <Section
+        className="LoginPage"
+      >
+        <section
+          className="Section LoginPage"
+        >
+          <div
+            className="success-alert"
+          >
+            <p
+              className="success"
+            >
+              Your registration was a success :)
+            </p>
+          </div>
+          <h2>
+            Login
+          </h2>
+          <LoginForm
+            onLoginSuccess={[Function]}
+          >
+            <form
+              className="LoginForm"
+              onSubmit={[Function]}
+            >
+              <div
+                role="alert"
+              />
+              <div
+                className="user_name"
+              >
+                <label
+                  htmlFor="LoginForm__user_name"
+                >
+                  User name
+                </label>
+                <Input
+                  id="LoginForm__user_name"
+                  name="user_name"
+                >
+                  <input
+                    className="Input "
+                    id="LoginForm__user_name"
+                    name="user_name"
+                  />
+                </Input>
+              </div>
+              <div
+                className="password"
+              >
+                <label
+                  htmlFor="LoginForm__password"
+                >
+                  Password
+                </label>
+                <Input
+                  id="LoginForm__password"
+                  name="password"
+                  type="password"
+                >
+                  <input
+                    className="Input "
+                    id="LoginForm__password"
+                    name="password"
+                    type="password"
+                  />
+                </Input>
+              </div>
+              <Button
+                type="submit"
+              >
+                <button
+                  className="Button "
+                  type="submit"
+                >
+                  Login
+                </button>
+              </Button>
+            </form>
+          </LoginForm>
+        </section>
+      </Section>
+    </LoginPage>
+  </Router>
+</BrowserRouter>
+`;

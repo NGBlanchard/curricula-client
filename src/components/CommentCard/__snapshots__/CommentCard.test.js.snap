@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CommentCard /> renders a Comment by default 1`] = `
+<CommentCard
+  comment={
+    Object {
+      "id": 1,
+      "user_id": 2,
+    }
+  }
+  user={2}
+>
+  <li
+    className="comment-card"
+    key="1"
+  >
+    <p
+      className="comment-author"
+    >
+      <Bull>
+        <span
+          className="Bull"
+        >
+           • 
+        </span>
+      </Bull>
+      <NiceDate>
+        Invalid Date
+      </NiceDate>
+    </p>
+    <p
+      className="comment-content"
+    />
+  </li>
+</CommentCard>
+`;

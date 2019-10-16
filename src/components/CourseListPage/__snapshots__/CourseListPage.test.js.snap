@@ -1,0 +1,217 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CourseListPage /> renders the page by default 1`] = `
+<BrowserRouter>
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "createHref": [Function],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "pathname": "/",
+          "search": "",
+          "state": undefined,
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
+  >
+    <CourseListPage
+      course={
+        Object {
+          "author_id": 2,
+          "date_created": "date",
+          "description": "description",
+          "id": 4,
+          "notes": "notes",
+          "readings": "readings",
+          "title": "title",
+          "topic": "topic",
+        }
+      }
+      key="4"
+    >
+      <Nav>
+        <nav
+          className="Nav"
+        >
+          <img
+            alt="logo"
+            className="logo"
+            src="../../favicon.ico"
+          />
+          <h1>
+            <NavLink
+              activeClassName="active"
+              aria-current="page"
+              to="/"
+            >
+              <Route
+                path="\\\\/"
+              >
+                <Link
+                  aria-current="page"
+                  className="active"
+                  replace={false}
+                  style={Object {}}
+                  to="/"
+                >
+                  <a
+                    aria-current="page"
+                    className="active"
+                    href="/"
+                    onClick={[Function]}
+                    style={Object {}}
+                  >
+                    Curricula
+                  </a>
+                </Link>
+              </Route>
+            </NavLink>
+          </h1>
+          <Bull>
+            <span
+              className="Bull"
+            >
+               • 
+            </span>
+          </Bull>
+          <Link
+            replace={false}
+            to="/create"
+          >
+            <a
+              href="/create"
+              onClick={[Function]}
+            >
+              Create
+            </a>
+          </Link>
+          <Bull>
+            <span
+              className="Bull"
+            >
+               • 
+            </span>
+          </Bull>
+          <NavLink
+            activeClassName="active"
+            aria-current="page"
+            to="/profile"
+          >
+            <Route
+              path="\\\\/profile"
+            >
+              <Link
+                aria-current={null}
+                replace={false}
+                to="/profile"
+              >
+                <a
+                  aria-current={null}
+                  href="/profile"
+                  onClick={[Function]}
+                >
+                  Profile
+                </a>
+              </Link>
+            </Route>
+          </NavLink>
+          <Bull>
+            <span
+              className="Bull"
+            >
+               • 
+            </span>
+          </Bull>
+          <div
+            className="Nav__not-logged-in"
+          >
+            <NavLink
+              activeClassName="active"
+              aria-current="page"
+              to="/register"
+            >
+              <Route
+                path="\\\\/register"
+              >
+                <Link
+                  aria-current={null}
+                  replace={false}
+                  to="/register"
+                >
+                  <a
+                    aria-current={null}
+                    href="/register"
+                    onClick={[Function]}
+                  >
+                    Register
+                  </a>
+                </Link>
+              </Route>
+            </NavLink>
+            <Bull>
+              <span
+                className="Bull"
+              >
+                 • 
+              </span>
+            </Bull>
+            <Link
+              replace={false}
+              to="/login"
+            >
+              <a
+                href="/login"
+                onClick={[Function]}
+              >
+                Log in
+              </a>
+            </Link>
+          </div>
+        </nav>
+      </Nav>
+      <Search
+        courseList={Array []}
+        filterList={[Function]}
+      >
+        <div
+          className="topic-sort-container"
+        >
+          <p>
+            Sort by Course Topic: 
+          </p>
+          <select
+            className="topic-sort"
+            onChange={[Function]}
+          >
+            <option
+              className="deselect-topic"
+              key="none"
+              value=""
+            >
+              None
+            </option>
+          </select>
+        </div>
+      </Search>
+      <Section
+        className="CourseListPage"
+        list={true}
+      >
+        <section
+          className="Section Section--list CourseListPage"
+        />
+      </Section>
+    </CourseListPage>
+  </Router>
+</BrowserRouter>
+`;

@@ -1,0 +1,198 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Profile /> renders user Profile by default 1`] = `
+<BrowserRouter>
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "createHref": [Function],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "pathname": "/",
+          "search": "",
+          "state": undefined,
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
+  >
+    <CoursePage
+      match={
+        Object {
+          "params": Object {},
+        }
+      }
+    >
+      <Nav>
+        <nav
+          className="Nav"
+        >
+          <img
+            alt="logo"
+            className="logo"
+            src="../../favicon.ico"
+          />
+          <h1>
+            <NavLink
+              activeClassName="active"
+              aria-current="page"
+              to="/"
+            >
+              <Route
+                path="\\\\/"
+              >
+                <Link
+                  aria-current="page"
+                  className="active"
+                  replace={false}
+                  style={Object {}}
+                  to="/"
+                >
+                  <a
+                    aria-current="page"
+                    className="active"
+                    href="/"
+                    onClick={[Function]}
+                    style={Object {}}
+                  >
+                    Curricula
+                  </a>
+                </Link>
+              </Route>
+            </NavLink>
+          </h1>
+          <Bull>
+            <span
+              className="Bull"
+            >
+               • 
+            </span>
+          </Bull>
+          <Link
+            replace={false}
+            to="/create"
+          >
+            <a
+              href="/create"
+              onClick={[Function]}
+            >
+              Create
+            </a>
+          </Link>
+          <Bull>
+            <span
+              className="Bull"
+            >
+               • 
+            </span>
+          </Bull>
+          <NavLink
+            activeClassName="active"
+            aria-current="page"
+            to="/profile"
+          >
+            <Route
+              path="\\\\/profile"
+            >
+              <Link
+                aria-current={null}
+                replace={false}
+                to="/profile"
+              >
+                <a
+                  aria-current={null}
+                  href="/profile"
+                  onClick={[Function]}
+                >
+                  Profile
+                </a>
+              </Link>
+            </Route>
+          </NavLink>
+          <Bull>
+            <span
+              className="Bull"
+            >
+               • 
+            </span>
+          </Bull>
+          <div
+            className="Nav__not-logged-in"
+          >
+            <NavLink
+              activeClassName="active"
+              aria-current="page"
+              to="/register"
+            >
+              <Route
+                path="\\\\/register"
+              >
+                <Link
+                  aria-current={null}
+                  replace={false}
+                  to="/register"
+                >
+                  <a
+                    aria-current={null}
+                    href="/register"
+                    onClick={[Function]}
+                  >
+                    Register
+                  </a>
+                </Link>
+              </Route>
+            </NavLink>
+            <Bull>
+              <span
+                className="Bull"
+              >
+                 • 
+              </span>
+            </Bull>
+            <Link
+              replace={false}
+              to="/login"
+            >
+              <a
+                href="/login"
+                onClick={[Function]}
+              >
+                Log in
+              </a>
+            </Link>
+          </div>
+        </nav>
+      </Nav>
+      <div
+        className="profile-container"
+      >
+        <h3>
+          Hello, 
+        </h3>
+        <p>
+          Member since:
+          <br />
+          <NiceDate
+            date={null}
+          >
+            31st December 1969
+          </NiceDate>
+        </p>
+        <div
+          className="my-courses"
+        >
+          <p />
+        </div>
+      </div>
+    </CoursePage>
+  </Router>
+</BrowserRouter>
+`;

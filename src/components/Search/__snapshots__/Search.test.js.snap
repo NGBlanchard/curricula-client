@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Search /> renders Search component by default 1`] = `
+<BrowserRouter>
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "createHref": [Function],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "pathname": "/",
+          "search": "",
+          "state": undefined,
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
+  >
+    <Search
+      courseList={Array []}
+      filterList={[Function]}
+    >
+      <div
+        className="topic-sort-container"
+      >
+        <p>
+          Sort by Course Topic: 
+        </p>
+        <select
+          className="topic-sort"
+          onChange={[Function]}
+        >
+          <option
+            className="deselect-topic"
+            key="none"
+            value=""
+          >
+            None
+          </option>
+        </select>
+      </div>
+    </Search>
+  </Router>
+</BrowserRouter>
+`;

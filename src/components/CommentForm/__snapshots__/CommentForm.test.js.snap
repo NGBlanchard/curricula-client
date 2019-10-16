@@ -1,0 +1,105 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CommentForm /> renders a Comment by default 1`] = `
+<CommentForm
+  comment={
+    Object {
+      "id": 1,
+      "user_id": 2,
+    }
+  }
+  user={2}
+>
+  <form
+    className="CommentForm"
+    onSubmit={[Function]}
+  >
+    <div
+      className="content"
+    >
+      <Textarea
+        aria-label="Here's to the Alcove..."
+        cols="30"
+        id="content"
+        name="content"
+        placeholder="Your blurb here..."
+        required={true}
+        rows="3"
+      >
+        <textarea
+          aria-label="Here's to the Alcove..."
+          className="Textarea "
+          cols="30"
+          id="content"
+          name="content"
+          placeholder="Your blurb here..."
+          required={true}
+          rows="3"
+        />
+      </Textarea>
+    </div>
+    <Button
+      type="submit"
+    >
+      <button
+        className="Button "
+        type="submit"
+      >
+        Blurb This Course
+      </button>
+    </Button>
+  </form>
+</CommentForm>
+`;
+
+exports[`<CommentForm /> renders the form by default 1`] = `
+<CommentForm
+  comment={
+    Object {
+      "id": 1,
+      "user_id": 2,
+    }
+  }
+  user={2}
+>
+  <form
+    className="CommentForm"
+    onSubmit={[Function]}
+  >
+    <div
+      className="content"
+    >
+      <Textarea
+        aria-label="Here's to the Alcove..."
+        cols="30"
+        id="content"
+        name="content"
+        placeholder="Your blurb here..."
+        required={true}
+        rows="3"
+      >
+        <textarea
+          aria-label="Here's to the Alcove..."
+          className="Textarea "
+          cols="30"
+          id="content"
+          name="content"
+          placeholder="Your blurb here..."
+          required={true}
+          rows="3"
+        />
+      </Textarea>
+    </div>
+    <Button
+      type="submit"
+    >
+      <button
+        className="Button "
+        type="submit"
+      >
+        Blurb This Course
+      </button>
+    </Button>
+  </form>
+</CommentForm>
+`;

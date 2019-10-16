@@ -1,0 +1,140 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CourseListItem /> renders the item by default 1`] = `
+<BrowserRouter>
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "createHref": [Function],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "pathname": "/",
+          "search": "",
+          "state": undefined,
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
+  >
+    <CourseListItem
+      course={
+        Object {
+          "author_id": 2,
+          "date_created": "2019-09-28T16:43:22.991Z",
+          "description": "description",
+          "duration": 12,
+          "id": 1,
+          "notes": "notes",
+          "readings": "readings",
+          "title": "title",
+          "topic": "topic",
+        }
+      }
+      key="1"
+    >
+      <NavLink
+        activeClassName="active"
+        aria-current="page"
+        className="CourseListItem"
+        to="/course/1"
+      >
+        <Route
+          path="\\\\/course\\\\/1"
+        >
+          <Link
+            aria-current={null}
+            className="CourseListItem"
+            replace={false}
+            to="/course/1"
+          >
+            <a
+              aria-current={null}
+              className="CourseListItem"
+              href="/course/1"
+              onClick={[Function]}
+            >
+              <header
+                className="CourseListItem__header"
+              >
+                <h2
+                  className="CourseListItem__heading"
+                >
+                  title
+                </h2>
+                <CourseDate
+                  course={
+                    Object {
+                      "author_id": 2,
+                      "date_created": "2019-09-28T16:43:22.991Z",
+                      "description": "description",
+                      "duration": 12,
+                      "id": 1,
+                      "notes": "notes",
+                      "readings": "readings",
+                      "title": "title",
+                      "topic": "topic",
+                    }
+                  }
+                >
+                  <span
+                    className="CourseListItem__date"
+                  >
+                    <NiceDate
+                      date="2019-09-28T16:43:22.991Z"
+                    >
+                      28th September 2019
+                    </NiceDate>
+                  </span>
+                </CourseDate>
+              </header>
+              <footer
+                className="CourseListItem__footer"
+              >
+                <CourseStyle
+                  course={
+                    Object {
+                      "author_id": 2,
+                      "date_created": "2019-09-28T16:43:22.991Z",
+                      "description": "description",
+                      "duration": 12,
+                      "id": 1,
+                      "notes": "notes",
+                      "readings": "readings",
+                      "title": "title",
+                      "topic": "topic",
+                    }
+                  }
+                >
+                  <span
+                    className="CourseListItem__style"
+                  >
+                    Topic : 
+                    topic
+                  </span>
+                </CourseStyle>
+                <span
+                  className="CourseListItem__author"
+                >
+                  <p
+                    className="CourseListItem__author"
+                  >
+                    Created by  
+                  </p>
+                </span>
+              </footer>
+            </a>
+          </Link>
+        </Route>
+      </NavLink>
+    </CourseListItem>
+  </Router>
+</BrowserRouter>
+`;
