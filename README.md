@@ -1,6 +1,6 @@
 # Curricula
 
-I wanted an app that allows my fellow teachers and instructors to share ideas about nontraditional courses using a very simple interface and content flexibility. 
+I wanted an app that allows my fellow teachers and instructors to share ideas about nontraditional courses using a very simple interface with content flexibility. 
  
 
 # Demo
@@ -18,15 +18,15 @@ You can:
   - Sort courses based on specific topics
   - Add your own classes to the app's course list
 
-<!-- # Screenshots
+# Screenshots
 Homepage:
-![Homepage](/screenshots/homepage.png)
+![Homepage](/screenshots/courselist.png)
 First Search:
-![First Search](/screenshots/search1.png)
+![First Search](/screenshots/course.png)
 Second Search:
-![Second Search](/screenshots/search22.png)
+![Second Search](/screenshots/comment.png)
 Results Screen:
-![Results](/screenshots/results2.png) -->
+![Results](/screenshots/createcourse.png)
 
 ### Technology Used
 
