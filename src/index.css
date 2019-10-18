@@ -20,6 +20,7 @@ p {
 .success {
   color: rgba(203, 80, 255, 0.735);
   font-weight: bold;
+  font-size: 35px;
 }
 
 .red {
@@ -27,6 +28,7 @@ p {
 }
 
 .success-alert {
-  display:none;
+  display: none;
 }
+
 

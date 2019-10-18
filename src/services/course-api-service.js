@@ -132,7 +132,6 @@ const CourseApiService = {
           ? res.json().then(e => Promise.reject(e))
           : res.json()
       )
-      // .then (res => console.log(res.user_name))
   },
   postUser(user) {
     return fetch(`${config.API_ENDPOINT}/users`, {

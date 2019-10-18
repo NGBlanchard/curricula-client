@@ -38,10 +38,3 @@ Create Course:
 * CSS
 * JavaScript
 * React
-* Node.js/Express
-* Postgres
-* Heroku
-* Mocha/Chai
-
-APIs were created to store data about users, courses, and comments.
-

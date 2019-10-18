@@ -13,10 +13,6 @@ const CourseContext = React.createContext({
   filteredList: [],
   courses: [],
   comments: [],
-  currentUser: {
-    user_name: '',
-    date_created: '',
-  },
   error: null,
   setError: () => {},
   clearError: () => {},
@@ -112,15 +108,6 @@ export class CourseProvider extends Component {
       }))
   }
 
-  setCurrentUser = res => {
-    this.setState({
-      currentUser: {
-        user_name: res.user_name,
-        date_created: res.date_created,
-      }
-    })
-  }
-
   render() {
     const value = {
       course: this.state.course,
@@ -143,6 +130,7 @@ export class CourseProvider extends Component {
       setUserList: this.setUserList,
       filterTopics: this.filterTopics,
       filterList: this.filterList,
+      register: this.state.register,
     }
     return (
       <CourseContext.Provider value={value}>

@@ -6,16 +6,15 @@ const passwordLength = length({min: 8, max: 60})
 const matchesPassword = matches('password')
 
 export default class RegistrationForm extends Component {
-  static defaultProps = {
-    onRegistrationSuccess: () => {
-    }
-  }
-  state = { error: null }
+  state = { 
+    error: null,
+    success: false
+   }
 
 
   onSubmit = e => {
     e.preventDefault()
-    const { user_name, password } = e.target
+    const { user_name, password, passwordConfirmation} = e.target
     this.setState({ error: null })
     CourseService.postUser({
       user_name: user_name.value,
@@ -24,9 +23,10 @@ export default class RegistrationForm extends Component {
     .then(user => {
       user_name.value = ''
       password.value = ''
-          this.props.onRegistrationSuccess(
-            alert("Registration successful. Now log in to access Curricula")
-          )
+      passwordConfirmation.value = ''
+          this.setState({
+            success: true,
+          })
         })
         .catch(res => {
           this.setState({ error: res.error })
@@ -36,6 +36,9 @@ export default class RegistrationForm extends Component {
   render() {
     const { error } = this.state
     return (
+      <>
+      {this.state.success ? <p className="success">Registration Successful!</p> 
+      : <p className="directions">Heads up: your password must contain 1 upper case, lower case, number and special character.</p>} 
       <form
         className='RegistrationForm'
         onSubmit={this.onSubmit}
@@ -75,13 +78,14 @@ export default class RegistrationForm extends Component {
             name="passwordConfirmation"  
             type="password" 
             required
-            validate={[ nonEmpty, matchesPassword]}/>
+            validate={[nonEmpty, matchesPassword]}/>
         </div>
         </div>
         <Button type='submit'>
           Sign me up
         </Button>
       </form>
+      </>
     )
   }
 }

@@ -41,6 +41,7 @@ export default class LoginForm extends Component {
   render() {
     const { error } = this.state
     return (
+      <>
       <form
         className='LoginForm'
         onSubmit={this.handleAuth}
@@ -50,7 +51,7 @@ export default class LoginForm extends Component {
         </div>
         <div className='user_name'>
           <label htmlFor='LoginForm__user_name'>
-            User name
+            Username
           </label>
           <Input
             name='user_name'
@@ -71,6 +72,7 @@ export default class LoginForm extends Component {
           Login
         </Button>
       </form>
+      </>
     )
   }
 }

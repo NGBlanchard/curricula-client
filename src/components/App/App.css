@@ -26,7 +26,7 @@
 }
 
 .welcome-header {
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 .landing {
@@ -38,4 +38,10 @@
   text-decoration: none;
   color: rgba(203, 80, 255, 0.735);
   font-weight: bold;
+}
+
+.demo {
+  text-align: center;
+  margin-top:0px;
+  font-size: 13px;
 }
