@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
 export const nullCourse = {
   author: {},
-  tags: [],
-}
+  tags: []
+};
 
 const CourseContext = React.createContext({
   course: nullCourse,
@@ -26,10 +26,10 @@ const CourseContext = React.createContext({
   setCurrentUser: () => {},
   setUserList: () => {},
   filterTopics: () => {},
-  filterList: () => {},
-})
+  filterList: () => {}
+});
 
-export default CourseContext
+export default CourseContext;
 
 export class CourseProvider extends Component {
   state = {
@@ -40,73 +40,71 @@ export class CourseProvider extends Component {
     courses: [],
     comments: [],
     course: nullCourse,
-    error: null,
-  }
+    error: null
+  };
 
-  filterList = (term) => {
-    const filteredList = this.state.courseList.filter(course => course.topic === term)
+  filterList = term => {
+    const filteredList = this.state.courseList.filter(
+      course => course.topic === term
+    );
     this.setState({
       filteredList: filteredList
-    })
-  }
+    });
+  };
 
   filterTopics = courseList => {
-    const filteredtopics = this.state.courseList.map(t => t.topic)
+    const filteredtopics = this.state.courseList.map(t => t.topic);
     this.setState({
       topics: filteredtopics
-    })
-  }
+    });
+  };
 
   setCourseList = courseList => {
-    this.setState({ courseList })
-  }
+    this.setState({ courseList });
+  };
 
   setUserList = userList => {
-    this.setState({ userList })
-    
-  }
+    this.setState({ userList });
+  };
 
   setError = error => {
-    console.error(error)
-    this.setState({ error })
-  }
+    console.error(error);
+    this.setState({ error });
+  };
 
   clearError = () => {
-    this.setState({ error: null })
-  }
+    this.setState({ error: null });
+  };
 
   setCourse = course => {
-    this.setState({ course })
-  }
+    this.setState({ course });
+  };
 
   setCourses = courses => {
-    this.setState({ courses })
-  }
+    this.setState({ courses });
+  };
 
   setComments = comments => {
-    this.setState({ comments })
-  }
+    this.setState({ comments });
+  };
 
   clearCourse = () => {
-    this.setCourse(nullCourse)
-    this.setComments([])
-  }
+    this.setCourse(nullCourse);
+    this.setComments([]);
+  };
 
   addComment = comment => {
     this.setState(prevState => ({
       comments: [...prevState.comments, comment]
-    }))
-  }
+    }));
+  };
 
   addCourse = course => {
-    this.setCourses([
-      ...[this.state.courses],
-      course
-    ])
+    this.setCourses([...[this.state.courses], course]);
     this.setState(prevState => ({
       courseList: [...prevState.courseList, course]
-      }))
-  }
+    }));
+  };
 
   render() {
     const value = {
@@ -130,12 +128,12 @@ export class CourseProvider extends Component {
       setUserList: this.setUserList,
       filterTopics: this.filterTopics,
       filterList: this.filterList,
-      register: this.state.register,
-    }
+      register: this.state.register
+    };
     return (
       <CourseContext.Provider value={value}>
         {this.props.children}
       </CourseContext.Provider>
-    )
+    );
   }
 }

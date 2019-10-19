@@ -1,59 +1,56 @@
-import CoursePage from './CoursePage'
-import { BrowserRouter as Router } from "react-router-dom"
-import React from 'react'
-import { configure, mount } from 'enzyme'
-import Adapter from 'enzyme-adapter-react-16'
-import toJson from 'enzyme-to-json'
+import CoursePage from "./CoursePage";
+import { BrowserRouter as Router } from "react-router-dom";
+import React from "react";
+import { configure, mount } from "enzyme";
+import Adapter from "enzyme-adapter-react-16";
+import toJson from "enzyme-to-json";
 
 configure({ adapter: new Adapter() });
 
-
-describe('<CoursePage />', () => {
+describe("<CoursePage />", () => {
   const course = {
     id: 4,
-    title: 'title',
-    description: 'description',
-    readings: 'readings',
-    notes: 'notes',
-    topic: 'topic',
-    date_created: 'date',
+    title: "title",
+    description: "description",
+    readings: "readings",
+    notes: "notes",
+    topic: "topic",
+    date_created: "date",
     author_id: 2
-  }
+  };
 
-const context = {
-  clearError(){
-    return;
-  }, 
-  setCourseList(){
-    return;
-  },
-  filterTopics() {
-    const filteredtopics = this.state.courseList.map(t => t.topic)
-    this.setState({
-      topics: filteredtopics
-    })
-  },
-  courseList: [],
-  filteredList: [],
-}
+  const context = {
+    clearError() {
+      return;
+    },
+    setCourseList() {
+      return;
+    },
+    filterTopics() {
+      const filteredtopics = this.state.courseList.map(t => t.topic);
+      this.setState({
+        topics: filteredtopics
+      });
+    },
+    courseList: [],
+    filteredList: []
+  };
 
-  it('Renders without crashing', () => {
+  it("Renders without crashing", () => {
     mount(
       <Router>
-        <CoursePage
-          key={course.id}
-          course={course}
-        />
-      </Router>, context)
-  })
-  it('renders the page by default', () => {
+        <CoursePage key={course.id} course={course} />
+      </Router>,
+      context
+    );
+  });
+  it("renders the page by default", () => {
     const wrapper = mount(
       <Router>
-        <CoursePage 
-          key={course.id} 
-          course={course}
-        />
-      </Router>, context)
-    expect(toJson(wrapper)).toMatchSnapshot()  
+        <CoursePage key={course.id} course={course} />
+      </Router>,
+      context
+    );
+    expect(toJson(wrapper)).toMatchSnapshot();
   });
-})
+});

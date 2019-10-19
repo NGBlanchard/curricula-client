@@ -1,66 +1,55 @@
-import React, { Component } from 'react'
-import { NavLink } from 'react-router-dom'
-import { NiceDate } from '../Utils/Utils'
-import CourseApiService from '../../services/course-api-service'
-import CourseContext from '../../context/CourseContext'
+import React, { Component } from "react";
+import { NavLink } from "react-router-dom";
+import { NiceDate } from "../Utils/Utils";
+import CourseApiService from "../../services/course-api-service";
+import CourseContext from "../../context/CourseContext";
 
-import './CourseListItem.css'
-
+import "./CourseListItem.css";
 
 export default class CourseListItem extends Component {
   state = {
-    user: "",
-  }
-  static contextType = CourseContext
+    user: ""
+  };
+  static contextType = CourseContext;
 
-    componentDidMount = () => {
-      this.context.clearError()
-      CourseApiService.getUserById(this.props.course.author)
-      .then(res =>
-        this.setState({
-          user: res.user_name
-        })
-      )}
+  componentDidMount = () => {
+    this.context.clearError();
+    CourseApiService.getUserById(this.props.course.author).then(res =>
+      this.setState({
+        user: res.user_name
+      })
+    );
+  };
 
   render() {
-    const { course } = this.props
+    const { course } = this.props;
     return (
-      
-      <NavLink to={`/course/${course.id}`} className='CourseListItem'>
-        <header className='CourseListItem__header'>
-          <h2 className='CourseListItem__heading'>
-            {course.title}
-          </h2>
+      <NavLink to={`/course/${course.id}`} className="CourseListItem">
+        <header className="CourseListItem__header">
+          <h2 className="CourseListItem__heading">{course.title}</h2>
           <CourseDate course={course} />
         </header>
-        <footer className='CourseListItem__footer'>
+        <footer className="CourseListItem__footer">
           <CourseStyle course={course} />
-          <span className='CourseListItem__author'>
-            <p className='CourseListItem__author'>
-              Created by  {this.state.user}
+          <span className="CourseListItem__author">
+            <p className="CourseListItem__author">
+              Created by {this.state.user}
             </p>
           </span>
         </footer>
       </NavLink>
-      
-    )
+    );
   }
 }
 
 function CourseStyle({ course }) {
-  return (
-    <span className='CourseListItem__style'>
-      Topic : {course.topic}
-    </span>
-  )
+  return <span className="CourseListItem__style">Topic : {course.topic}</span>;
 }
 
 function CourseDate({ course }) {
   return (
-    <span className='CourseListItem__date'>
-      <NiceDate
-        date={course.date_created}
-      />
+    <span className="CourseListItem__date">
+      <NiceDate date={course.date_created} />
     </span>
-  )
+  );
 }

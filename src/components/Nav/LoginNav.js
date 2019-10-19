@@ -1,51 +1,41 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-import { Bull } from '../Utils/Utils'
-import TokenService from '../../services/token-service'
-import './Nav.css'
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import { Bull } from "../Utils/Utils";
+import TokenService from "../../services/token-service";
+import "./Nav.css";
 
 export default class LoginNav extends Component {
   handleLogoutClick = () => {
-    TokenService.clearAuthToken()
+    TokenService.clearAuthToken();
     sessionStorage.clear();
-    window.location.href = '/login';
-  }
+    window.location.href = "/login";
+  };
 
   renderLogoutLink() {
     return (
-      <div className='Nav__logged-in'>
-        <Link
-          onClick={this.handleLogoutClick}
-          to='/'>
+      <div className="Nav__logged-in">
+        <Link onClick={this.handleLogoutClick} to="/">
           Logout
         </Link>
       </div>
-    )
+    );
   }
 
   renderLoginLink() {
     return (
-      <div className='Nav__not-logged-in'>
-        <Link
-          to='/register'>
-          Register
-        </Link>
+      <div className="Nav__not-logged-in">
+        <Link to="/register">Register</Link>
         <Bull />
-        <Link
-          to='/login'>
-          Log in
-        </Link>
+        <Link to="/login">Log in</Link>
       </div>
-    )
+    );
   }
 
   render() {
     return (
-      <nav className='Nav'>
+      <nav className="Nav">
         <h1>
-          <Link to='/'>
-            Curricula
-          </Link>
+          <Link to="/">Curricula</Link>
         </h1>
         {/* <Bull />
         <Link to='/create'>
@@ -60,6 +50,6 @@ export default class LoginNav extends Component {
           ? this.renderLogoutLink()
           : this.renderLoginLink()}
       </nav>
-    )
+    );
   }
 }
