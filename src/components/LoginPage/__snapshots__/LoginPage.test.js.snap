@@ -85,7 +85,7 @@ exports[`<LoginPage /> renders Login Page by default 1`] = `
         </nav>
       </LoginNav>
       <Welcome>
-        <div
+        <section
           className="welcome-container"
         >
           <h1
@@ -103,7 +103,12 @@ exports[`<LoginPage /> renders Login Page by default 1`] = `
           >
             Click register above or login below.
           </p>
-        </div>
+          <p
+            className="demo"
+          >
+            Demo username: Demo_Person • Demo password: D3moPa55word!
+          </p>
+        </section>
       </Welcome>
       <Section
         className="LoginPage"
@@ -111,15 +116,6 @@ exports[`<LoginPage /> renders Login Page by default 1`] = `
         <section
           className="Section LoginPage"
         >
-          <div
-            className="success-alert"
-          >
-            <p
-              className="success"
-            >
-              Your registration was a success :)
-            </p>
-          </div>
           <h2>
             Login
           </h2>
@@ -139,7 +135,7 @@ exports[`<LoginPage /> renders Login Page by default 1`] = `
                 <label
                   htmlFor="LoginForm__user_name"
                 >
-                  User name
+                  Username
                 </label>
                 <Input
                   id="LoginForm__user_name"

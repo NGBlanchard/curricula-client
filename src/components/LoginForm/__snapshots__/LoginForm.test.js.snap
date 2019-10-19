@@ -17,7 +17,7 @@ exports[`<LoginForm /> renders Login Form by default 1`] = `
       <label
         htmlFor="LoginForm__user_name"
       >
-        User name
+        Username
       </label>
       <Input
         id="LoginForm__user_name"

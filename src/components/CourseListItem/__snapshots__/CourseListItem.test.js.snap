@@ -126,7 +126,7 @@ exports[`<CourseListItem /> renders the item by default 1`] = `
                   <p
                     className="CourseListItem__author"
                   >
-                    Created by  
+                    Created by 
                   </p>
                 </span>
               </footer>
