@@ -13,21 +13,21 @@ export default class LoginNav extends Component {
 
   renderLogoutLink() {
     return (
-      <div className="Nav__logged-in">
+      <span className="Nav__logged-in">
         <Link onClick={this.handleLogoutClick} to="/">
           Logout
         </Link>
-      </div>
+      </span>
     );
   }
 
   renderLoginLink() {
     return (
-      <div className="Nav__not-logged-in">
+      <span className="Nav__not-logged-in">
         <Link to="/register">Register</Link>
         <Bull />
         <Link to="/login">Log in</Link>
-      </div>
+      </span>
     );
   }
 
@@ -37,15 +37,6 @@ export default class LoginNav extends Component {
         <h1>
           <Link to="/">Curricula</Link>
         </h1>
-        {/* <Bull />
-        <Link to='/create'>
-          Create
-        </Link>
-        <Bull />
-        <Link to='/profile'>
-          Profile
-        </Link>
-        <Bull />   */}
         {TokenService.hasAuthToken()
           ? this.renderLogoutLink()
           : this.renderLoginLink()}

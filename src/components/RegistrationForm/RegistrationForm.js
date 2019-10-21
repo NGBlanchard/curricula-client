@@ -53,8 +53,8 @@ export default class RegistrationForm extends Component {
           </p>
         )}
         <form className="RegistrationForm" onSubmit={this.onSubmit}>
-          <div role="alert">{error && <p className="red">{error}</p>}</div>
-          <div className="user_name">
+          <span role="alert">{error && <p className="red">{error}</p>}</span>
+          <section className="user_name">
             <label htmlFor="RegistrationForm__user_name">
               User name <Required />
             </label>
@@ -64,8 +64,8 @@ export default class RegistrationForm extends Component {
               required
               id="RegistrationForm__user_name"
             ></Input>
-          </div>
-          <div className="password">
+          </section>
+          <section className="password">
             <label htmlFor="RegistrationForm__password">
               Password <Required />
             </label>
@@ -76,8 +76,8 @@ export default class RegistrationForm extends Component {
               validate={[passwordLength, isTrimmed]}
               id="RegistrationForm__password"
             ></Input>
-          </div>
-          <div className="password-confirm">
+          </section>
+          <section className="password-confirm">
             <label htmlFor="RegistrationForm__password-confirm">
               Confirm Password <Required />
             </label>
@@ -89,7 +89,7 @@ export default class RegistrationForm extends Component {
                 validate={[nonEmpty, matchesPassword]}
               />
             </div>
-          </div>
+          </section>
           <Button type="submit">Sign me up</Button>
         </form>
       </>

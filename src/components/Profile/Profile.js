@@ -27,17 +27,14 @@ export default class CoursePage extends Component {
     return (
       <>
         <Nav />
-        <div className="profile-container">
+        <section className="profile-container">
           <h3>Hello, {this.state.currentUser}</h3>
           <p>
             Member since:
             <br />
             <NiceDate date={this.state.userDate} />
           </p>
-          <div className="my-courses">
-            <p></p>
-          </div>
-        </div>
+        </section>
       </>
     );
   }

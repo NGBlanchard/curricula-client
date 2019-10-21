@@ -13,21 +13,21 @@ export default class Nav extends Component {
 
   renderLogoutLink() {
     return (
-      <div className="Nav__logged-in">
+      <span className="Nav__logged-in">
         <NavLink onClick={this.handleLogoutClick} to="/">
           Logout
         </NavLink>
-      </div>
+      </span>
     );
   }
 
   renderLoginLink() {
     return (
-      <div className="Nav__not-logged-in">
+      <span className="Nav__not-logged-in">
         <NavLink to="/register">Register</NavLink>
         <Bull />
         <Link to="/login">Log in</Link>
-      </div>
+      </span>
     );
   }
 

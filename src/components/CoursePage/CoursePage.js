@@ -44,23 +44,23 @@ export default class CoursePage extends Component {
           <Bull />
           by {course.author}
         </p>
-        <div className="card">
+        <section className="card">
           <h3>Course Description</h3>
           <p className="CoursePage__description">{course.description}</p>
-        </div>
-        <div className="card">
+        </section>
+        <section className="card">
           <h3>Teaching Notes</h3>
           <p className="CoursePage__notes">{course.notes}</p>
-        </div>
-        <div className="card">
+        </section>
+        <section className="card">
           <h3>Readings & Resources</h3>
           <p className="CoursePage__readings">{course.readings}</p>
-        </div>
-        <div className="duration">
+        </section>
+        <section className="duration">
           <h3>Estimated Duration </h3>
           <p className="CoursePage__duration">{course.duration} weeks</p>
-        </div>
-        <div>
+        </section>
+        <section>
           <h3>Blurbs</h3>
           <ul className="CoursePage__comment-list">
             {comments.map((comment, index) => (
@@ -71,7 +71,7 @@ export default class CoursePage extends Component {
               />
             ))}
           </ul>
-        </div>
+        </section>
         <CommentForm render={comments} />
       </>
     );

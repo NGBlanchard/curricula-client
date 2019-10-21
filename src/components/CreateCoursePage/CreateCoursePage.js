@@ -69,7 +69,7 @@ class CreateCoursePage extends React.Component {
             </Section>
             <Section className="form-section">
               <p>Select Course Topic</p>
-              <div className="topic-container">
+              <section className="topic-container">
                 <select className="select" onChange={this.handleChange}>
                   <option value="Writing">Writing</option>
                   <option value="Film">Film</option>
@@ -78,7 +78,7 @@ class CreateCoursePage extends React.Component {
                   <option value="Teaching">Teaching</option>
                   <option value="Politics">Politics</option>
                 </select>
-              </div>
+              </section>
             </Section>
             <Section className="form-section">
               <label htmlFor="course-description">Course Description</label>

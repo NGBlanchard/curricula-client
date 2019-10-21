@@ -40,19 +40,19 @@ export default class LoginForm extends Component {
     return (
       <>
         <form className="LoginForm" onSubmit={this.handleAuth}>
-          <div role="alert">{error && <p className="red">{error}</p>}</div>
-          <div className="user_name">
+          <span role="alert">{error && <p className="red">{error}</p>}</span>
+          <section className="user_name">
             <label htmlFor="LoginForm__user_name">Username</label>
             <Input name="user_name" id="LoginForm__user_name"></Input>
-          </div>
-          <div className="password">
+          </section>
+          <section className="password">
             <label htmlFor="LoginForm__password">Password</label>
             <Input
               name="password"
               type="password"
               id="LoginForm__password"
             ></Input>
-          </div>
+          </section>
           <Button type="submit">Login</Button>
         </form>
       </>

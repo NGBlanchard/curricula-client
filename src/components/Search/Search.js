@@ -24,7 +24,7 @@ class Search extends React.Component {
       .map(t => t.topic)
       .filter((value, index, topic) => topic.indexOf(value) === index);
     return (
-      <div className="topic-sort-container">
+      <section className="topic-sort-container">
         <p>Sort by Course Topic: </p>
         <select className="topic-sort" onChange={this.handleChange}>
           {filteredtopics.map((topic, index) => (
@@ -36,7 +36,7 @@ class Search extends React.Component {
             None
           </option>
         </select>
-      </div>
+      </section>
     );
   }
 }
