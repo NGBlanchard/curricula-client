@@ -1,8 +1,9 @@
 .comment-author{
   color: rgba(203, 80, 255, 0.735);
   font-weight: bold;
+  font-size: 17px
 }
 
 .comment-content{
-  font-size: 16px;
+  font-size: 18px;
 }
